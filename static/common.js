@@ -494,6 +494,7 @@ function updateLinks() {
     }
     $("#linkToSearch").prop("href","index.html" + serverParam);
     $("#linkToBuilder").prop("href","builder.html" + serverParam);
+    $("#linkToSimulate").prop("href","simulate.html" + serverParam);
     $("#linkToContribute").prop("href","contribute.html" + serverParam);
 }
 

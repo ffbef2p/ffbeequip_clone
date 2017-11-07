@@ -1,0 +1,237 @@
+#elementalResists {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#elementalResists th {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+#elementalResists td {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.progressBarDiv {
+    width: 100%;
+    background-color: grey;
+}
+.progressBar {
+    width: 0%;
+    height: 34px;
+    background-color: #4CAF50;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 34px; /* To center it vertically */
+    color: white; 
+}
+
+.progressBar.finished {
+    background-color: skyblue;
+}
+
+.unitAttackElement {
+    margin-top: 10px;
+}
+.unitAttackElement .text-right {
+    margin-top: 14px;
+}
+.magicalSkillType {
+    margin-top: 10px;
+}
+
+.calculatorLink {
+    margin-left:10px;
+}
+
+.result-tab-pane {
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.buildDiv {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+#buildButton {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#fixItemModal .modal-header {
+    display: flex;
+    flex-direction: row;
+}
+
+#fixItemModal .type .dropdown-menu {
+    width: 268px;
+    padding: 5px;
+}
+
+
+#fixItemModal .stat .dropdown-menu {
+    width: 204px;
+    padding: 5px;
+}
+
+#fixItemModal .modal-body {
+    padding:0;
+}
+
+#fixItemModal .results .tr.selectable:hover {
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+
+#fixItemModal .modal-header .type {
+    margin-left: 10px;
+}
+#fixItemModal .modal-header .stat {
+    margin-left: 10px;
+    margin-right: 50px
+}
+#fixItemModal .modal-header .dropdown {
+    cursor: pointer;
+}
+#fixItemModal .modal-header .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#fixItemModal.notLoggedIn .inventory {
+    display: none;
+}
+
+#fixItemModal .inventory .badge {
+    background-color: green;
+    color: white;
+}
+
+#fixItemModal .inventory .badge.notEnough {
+    background-color: red;
+    color: white;
+}
+
+.td.pin:hover {
+    cursor: pointer;
+}
+
+.td.pin img {
+    width: 20px;
+    position: relative;
+}
+
+.td.pin.fixed:hover img {
+    animation-name: unpin;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.td.pin.notFixed img {
+    display: none;
+}
+
+.td.pin.notFixed:hover img {
+    display: block;
+    animation-name: pin;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes unpin {
+    from {
+        top: 0;
+        left: 0;
+        transform: rotate(0);
+    }
+    to {
+        top: -5px;
+        left: 5px;
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes pin {
+    from {
+        top: -5px;
+        left: 5px;
+        transform: rotate(-15deg);
+    }
+    to {
+        top: 0;
+        left: 0;
+        transform: rotate(0);
+    }
+}
+
+#resultStats {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#resultStats .stat {
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+#resultStats .value {
+    font-weight: 100;
+}
+
+#resultStats .statToMaximize .value {
+    font-weight: bold;
+}
+
+#resultStats .bonus {
+    color: #999999;
+}
+
+#resultStats .damage {
+    margin-left: 10px;
+    clear: both;
+    padding-top: 10px;
+}
+
+#resultStats .damageResult {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#fixedItemsTitle {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+
+#showBuilderSetupLinkDialog ul {
+    list-style-type: circle;
+    padding-left: 10px;
+}
+
+
+#showLinkDialog input {
+    width: 100%;
+}
+
+#showBuilderSetupLinkDialog input {
+    width: 100%;
+}
+
+.buildLink {
+    cursor: pointer;
+}
+
+.builderSetupLink {
+    cursor: pointer;
+}
