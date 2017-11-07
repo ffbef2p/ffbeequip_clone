@@ -1,0 +1,297 @@
+<!-- Doctype HTML5 -->
+<!doctype html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="common.css?version=3">
+        <link rel="stylesheet" type="text/css" href="builder.css">
+        <link rel="icon" type="image/png" href="/img/heavyArmor.png">
+        <title>FFBE Equip - Builder</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="col-xs-12">
+                <nav class="col-xs-12 navbar navbar-default">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">FFBE Equip</a>
+                        </div>
+                        <div class="switchServer btn-group">
+                            <button class="GL btn btn-default" onclick="switchTo('GL')">GL</button>
+                            <button class="JP btn btn-default" onclick="switchTo('JP')">JP</button>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li><a id="linkToSearch" href="index.html">Search</a></li>
+                            <li class="active"><a id="linkToBuilder" href="builder.html">Builder</a></li>
+                            <li><a id="linkToContribute" href="contribute.html">Contribute</a></li>
+                        </ul>
+                        <div class="jpWarning"><span class="glyphicon glyphicon-alert" style="margin-right:10px"></span>The JP version is a work in progress<br/> The data are not complete, or are still GL data.</div>
+                        <div id="inventoryDiv" class="buttons account">
+                            <span>Inventory :&nbsp;</span>
+                            <span class="status"></span>
+                            <div class="loader"></div>
+                            <button class="hidden btn btn-default loadInventory" onclick="loadInventory()">Log in</button>
+                            <span class="hidden glyphicon glyphicon-off logOut" onclick="logOut()" title="logout"></span>
+                            <div class="loader hidden"></div>
+                            <span class="message hidden"/>
+                        </div>
+                </nav>
+            </div>
+            <div class="col-xs-6">
+                <div class="panel panel-default goal">
+                    <div class="panel-heading">
+                        <form class="form-inline">
+                            <div class="form-group flex-form-group">
+                                <span>Goal : Maximize</span>
+                                <select class="form-control">
+                                    <option value="atk">Physical damage</option>
+                                    <option value="mag">Magical damage</option>
+                                    <option value="def">Defense</option>
+                                    <option value="spr">Spirit</option>
+                                    <option value="hp">Health Points</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="panel panel-default unit">
+                    <div class="panel-heading">
+                        <form class="form-inline">
+                            <div class="form-group flex-form-group">
+                                <span>Unit</span>
+                                <select id="unitsSelect" name="units" class="form-control"></select>
+                                <div class="unit-rarity">
+                                    
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-body">
+                        <div class="unitStats">
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">HP</span>
+                                    <input id="baseStat_hp" type = "text" class = "form-control" placeholder = "3500" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">MP</span>
+                                    <input id="baseStat_mp" type = "text" class = "form-control" placeholder = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">ATK</span>
+                                    <input id="baseStat_atk" type = "text" class = "form-control" placeholder = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">DEF</span>
+                                    <input id="baseStat_def" type = "text" class = "form-control" placeholder = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">MAG</span>
+                                    <input id="baseStat_mag" type = "text" class = "form-control" placeholder = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">SPR</span>
+                                    <input id="baseStat_spr" type = "text" class = "form-control" placeholder = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 unitAttackElement">
+                            <div class="col-xs-3 text-right">Skill innate element(s):</div>
+                            <div class="col-xs-9 btn-group elements choice" data-toggle="buttons" id="elements"></div>
+                        </div>
+                        <div class="col-xs-12 magicalSkillType hidden">
+                            <div class="col-xs-3 text-right">Type of used attack:</div>
+                            <div class="col-xs-9">
+                                <select class="form-control">
+                                    <option value="normal">Normal magical attack</option>
+                                    <option value="physicalMagic">Magic attack with physical mechanism</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default monster">
+                    <div class="panel-heading">
+                        <span>Monster</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="btn-group races choice" data-toggle="buttons" id="races">
+                        </div>
+                        <table id="elementalResists">
+                            <thead>
+                                <tr>
+                                    <th><img class="miniIcon" src="img/heavyShield.png"><img src="img/fire.png"/></th>
+                                    <th><img class="miniIcon" src="img/heavyShield.png"><img src="img/ice.png"/></th>
+                                    <th><img class="miniIcon" src="img/heavyShield.png"><img src="img/lightning.png"/></th>
+                                    <th><img class="miniIcon" src="img/heavyShield.png"><img src="img/water.png"/></th>
+                                    <th><img class="miniIcon" src="img/heavyShield.png"><img src="img/wind.png"/></th>
+                                    <th><img class="miniIcon" src="img/heavyShield.png"><img src="img/earth.png"/></th>
+                                    <th><img class="miniIcon" src="img/heavyShield.png"><img src="img/light.png"/></th>
+                                    <th><img class="miniIcon" src="img/heavyShield.png"><img src="img/dark.png"/></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fire"><input class="form-control" type="text" placeholder="0" onkeypress="return isNumberOrMinus(event)"/></td>
+                                    <td class="ice"><input class="form-control" type="text" placeholder="0" onkeypress="return isNumberOrMinus(event)"/></td>
+                                    <td class="lightning"><input class="form-control" type="text" placeholder="0" onkeypress="return isNumberOrMinus(event)"/></td>
+                                    <td class="water"><input class="form-control" type="text" placeholder="0" onkeypress="return isNumberOrMinus(event)"/></td>
+                                    <td class="wind"><input class="form-control" type="text" placeholder="0" onkeypress="return isNumberOrMinus(event)"/></td>
+                                    <td class="earth"><input class="form-control" type="text" placeholder="0" onkeypress="return isNumberOrMinus(event)"/></td>
+                                    <td class="light"><input class="form-control" type="text" placeholder="0" onkeypress="return isNumberOrMinus(event)"/></td>
+                                    <td class="dark"><input class="form-control" type="text" placeholder="0" onkeypress="return isNumberOrMinus(event)"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel panel-default equipments">
+                    <div class="panel-heading">
+                        <form class="form-inline">
+                            <div class="form-group flex-form-group">
+                                <span>Equipments</span>
+                                <select class="form-control">
+                                    <option value="all">All equipments</option>
+                                    <option value="owned" disabled>Only owned equipments</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-body">
+                        <div><input id="exludeEvent" type="checkbox"><label>Exclude event items</label></div>
+                        <div><input id="excludeTMR5" type="checkbox"><label>Exclude TMR of base 5* units</label></div>
+                        <div><input id="excludeNotReleasedYet" type="checkbox" checked="true"><label>Exclude not released yet equipments</label></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <ul id="unitTabs" class="nav nav-tabs">
+                    <li class="active tab_0"><a href="#" onclick="selectUnitTab(0)">Select unit</a></li>
+                    <li id="addNewUnitButton" onclick="addNewUnit()"><a><span class="glyphicon glyphicon-plus"/></a></li>
+                </ul>
+                <div class="result-tab-pane">
+                    <div class="panel-body" style="padding:0;">
+                        <div class="buildDiv">
+                            <button class="btn btn-default" onclick="displayFixItemModal()"><img src="img/pin.png" style="width: 20px;margin-right: 5px;"/>Pin an item</button>
+                            <button id="buildButton" class="btn btn-primary">Build !</button>
+                            <div id="buildProgressBar" class="progressBarDiv">
+                                <div class="progressBar">0%</div>
+                            </div>
+                        </div>
+                        <div id="resultStats" class="hidden row" >
+                            <div class="col-xs-5 hp"><div class="col-xs-4 stat">HP</div><div class="col-xs-4 value text-right">3500</div><div class="col-xs-4 bonus text-right">50%</div></div><div class="col-xs-1"></div>
+                            <div class="col-xs-5 mp"><div class="col-xs-4 stat">MP</div><div class="col-xs-4 value text-right">3500</div><div class="col-xs-4 bonus text-right">50%</div></div>
+                            <div class="col-xs-5 atk"><div class="col-xs-4 stat">ATK</div><div class="col-xs-4 value text-right">3500</div><div class="col-xs-4 bonus text-right">50%</div></div><div class="col-xs-1"></div>
+                            <div class="col-xs-5 def"><div class="col-xs-4 stat">DEF</div><div class="col-xs-4 value text-right">3500</div><div class="col-xs-4 bonus text-right">50%</div></div>
+                            <div class="col-xs-5 mag"><div class="col-xs-4 stat">MAG</div><div class="col-xs-4 value text-right">150</div><div class="col-xs-4 bonus text-right">50%</div></div><div class="col-xs-1"></div>
+                            <div class="col-xs-5 spr"><div class="col-xs-4 stat">SPR</div><div class="col-xs-4 value text-right">3500</div><div class="col-xs-4 bonus text-right">250%</div></div>
+                            <div class="damage hidden">Damage on a 100 <span class="defensiveStat"></span> enemy with a <span class="damageCoef"></span> skill: <span class="damageResult"></span></div>
+                        </div>
+                        <div class="buildLinks hidden">
+                            <div class="col-xs-4">
+                                <span class="glyphicon glyphicon-link"></span>
+                                <a class="buildLink" onclick="showBuildLink()">Share this build</a>
+                            </div>
+                            <div class="col-xs-4">
+                                <span class="glyphicon glyphicon-wrench"></span>
+                                <a class="builderSetupLink" onclick="showBuilderSetupLink()">Share this builder setup</a>
+                            </div>
+                            <div class="col-xs-4">
+                                <span class="glyphicon glyphicon-camera"></span>
+                                <a class="imageLink" target="_blank">Get build image (Using ffbeben.ch)</a>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <a class="calculatorLink hidden" target="_blank">Copy build to unit calculator</a>
+                        <div id="fixedItemsTitle" class="hidden">Pinned items:</div>
+                        <div id="buildResult" class="table notSorted items results">
+                            <div class="tbody">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>How to use this:</h3>
+                    <ol>
+                        <li>Make sure you're logged in, so that your inventory is loaded</li>
+                        <li>Select a unit you want to make a build for</li>
+                        <li>If you plan to use an attack with innate element(s), you can select the corresponding element(s) in the "Attack element(s)" section</li>
+                        <li>Fill information on the monster you're facing, its race(s) and its elemental resistance (negative number for elemental weakness). Take into account the elemental debufs you'll give it (for instance, if using Orlandeau's Divine Ruination, substract 50 to the light elemental resistance).</li>
+                        <li>Click on "Build !" button to start the computation</li>
+                    </ol>
+                    <p>Some features are still missing for now. It wont use Equip X materia.</p>
+                </div>
+                <div>
+                    <a class="buttonLink" href="https://www.reddit.com/message/compose/?to=lyrgard">Send me a message on reddit</a>
+                </div>
+                <div>
+                    <a class="buttonLink" href='https://ko-fi.com/Lyrgard'>Donate</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="fixItemModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <input type="text" class="form-control" id="searchText">
+                        <div class="dropdown type">
+                            <img src="img/unknownType.png" class="dropdown-toggle typeChoice" type="button" data-toggle="dropdown"/>    
+                            <div class="dropdown-menu">
+                            </div>
+                        </div>
+                        <div class="dropdown stat">
+                            <img src="img/sort-a-z.png" class="dropdown-toggle statChoice" type="button" data-toggle="dropdown"/>    
+                            <div class="dropdown-menu">
+                            </div>
+                        </div> 
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="results" class="table notSorted items results">
+							<div class="thead">
+                                <div class="tr">
+                                    <div class="td type">&nbsp;</div>
+                                    <div class="td name">Name</div>
+                                    <div id="statTitle" class="td value sort">Value</div>
+                                    <div class="td special">Special</div>
+									<div class="td access">Access</div>
+                                    <div class="td inventory">Owned</div>
+                                </div>
+                            </div>
+                            <div class="tbody">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/mark.js/8.9.1/jquery.mark.min.js"></script>
+		<script src="lib/jquery.ba-throttle-debounce.min.js"></script>
+        <script src="common.js?version=7"></script>
+        <script src="builder.js?version=7"></script>
+        <script src="googleAnalytics.js"></script>
+    </body>
+</html>
