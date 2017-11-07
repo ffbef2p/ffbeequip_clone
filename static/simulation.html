@@ -6,9 +6,9 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="common.css?version=3">
-        <link rel="stylesheet" type="text/css" href="simulation.css">
+        <link rel="stylesheet" type="text/css" href="builder.css">
         <link rel="icon" type="image/png" href="/img/heavyArmor.png">
-        <title>FFBE Equip - Simulation</title>
+        <title>FFBE Equip - Builder</title>
     </head>
     <body>
         <div class="container-fluid">
@@ -127,6 +127,57 @@
                         <span>Monster</span>
                     </div>
                     <div class="panel-body">
+                        <div class="unitStats">
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">HP</span>
+                                    <input id="monsterBaseStat_hp" type = "text" class = "form-control" placeholder = "3500" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">MP</span>
+                                    <input id="monsterBaseStat_mp" type = "text" class = "form-control" placeholder = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">ATK</span>
+                                    <input id="monsterBaseStat_atk" type = "text" class = "form-control" placeholder = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">DEF</span>
+                                    <input id="monsterBaseStat_def" type = "text" class = "form-control" placeholder = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">MAG</span>
+                                    <input id="monsterBaseStat_mag" type = "text" class = "form-control" placeholder = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">SPR</span>
+                                    <input id="monsterBaseStat_spr" type = "text" class = "form-control" placeholder = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 unitAttackElement">
+                            <div class="col-xs-3 text-right">Skill innate element(s):</div>
+                            <div class="col-xs-9 btn-group elements choice" data-toggle="buttons" id="monsterElements"></div>
+                        </div>
+                        <div class="col-xs-12 magicalSkillType hidden">
+                            <div class="col-xs-3 text-right">Type of used attack:</div>
+                            <div class="col-xs-9">
+                                <select class="form-control">
+                                    <option value="normal">Normal magical attack</option>
+                                    <option value="physicalMagic">Magic attack with physical mechanism</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="btn-group races choice" data-toggle="buttons" id="races">
                         </div>
                         <table id="elementalResists">
@@ -155,24 +206,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-                <div class="panel panel-default equipments">
-                    <div class="panel-heading">
-                        <form class="form-inline">
-                            <div class="form-group flex-form-group">
-                                <span>Equipments</span>
-                                <select class="form-control">
-                                    <option value="all">All equipments</option>
-                                    <option value="owned" disabled>Only owned equipments</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="panel-body">
-                        <div><input id="exludeEvent" type="checkbox"><label>Exclude event items</label></div>
-                        <div><input id="excludeTMR5" type="checkbox"><label>Exclude TMR of base 5* units</label></div>
-                        <div><input id="excludeNotReleasedYet" type="checkbox" checked="true"><label>Exclude not released yet equipments</label></div>
                     </div>
                 </div>
             </div>
@@ -292,7 +325,7 @@
 		<script src="https://cdn.jsdelivr.net/mark.js/8.9.1/jquery.mark.min.js"></script>
 		<script src="lib/jquery.ba-throttle-debounce.min.js"></script>
         <script src="common.js?version=7"></script>
-        <script src="builder.js?version=7"></script>
+        <script src="simulation.js?version=7"></script>
         <script src="googleAnalytics.js"></script>
     </body>
 </html>

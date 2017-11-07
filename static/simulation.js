@@ -1,4 +1,4 @@
-page = "builder";
+page = "simulation";
 var adventurerIds = ["1500000013", "1500000015", "1500000016", "1500000017", "1500000018"];
 
 var goals = {
@@ -1812,6 +1812,7 @@ $(function() {
     
     // Elements
 	addImageChoicesTo("elements",["fire", "ice", "lightning", "water", "wind", "earth", "light", "dark"]);
+	addImageChoicesTo("monsterElements",["fire", "ice", "lightning", "water", "wind", "earth", "light", "dark"]);
     // Killers
 	addTextChoicesTo("races",'checkbox',{'Aquatic':'aquatic', 'Beast':'beast', 'Bird':'bird', 'Bug':'bug', 'Demon':'demon', 'Dragon':'dragon', 'Human':'human', 'Machine':'machine', 'Plant':'plant', 'Undead':'undead', 'Stone':'stone', 'Spirit':'spirit'});
     
