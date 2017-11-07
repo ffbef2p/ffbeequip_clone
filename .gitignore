@@ -4,4 +4,5 @@
 /tools/equipment.json
 /tools/units.json
 /tools/materia.json
-/tools/unitsWithSkill.json/static/web.config
+/tools/unitsWithSkill.json
+/static/web.config
