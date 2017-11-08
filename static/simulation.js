@@ -1244,6 +1244,7 @@ function onUnitChange() {
             $("#unitTabs .tab_" + currentUnitIndex + " a").html("Select unit");
         }
         displayUnitRarity(selectedUnitData);
+        populateUnitSkills();
     });
 }
 
@@ -1255,6 +1256,11 @@ function updateUnitStats() {
             $("#baseStat_" + stat).val("");
         }
     });
+}
+
+function populateUnitSkills() {
+    var currentUnit = builds[currentUnitIndex].selectedUnit;
+    
 }
 
 function reinitBuild(buildIndex) {
@@ -1850,4 +1856,14 @@ function populateItemStat() {
 	for (var key in statList) {
         target.append('<img src="img/sort-' + statList[key] + '.png" onclick="selectSearchStat(\'' + statList[key] + '\');" class="btn btn-default"/>');
 	}
+}
+
+function unitAttack() {
+    $("#monsterCurrentHp").val($("#monsterCurrentHp").val() - 10);
+    $("#unitCurrentMp").val($("#unitCurrentMp").val() - 45);
+}
+
+function monsterAttack() {
+    $("#unitCurrentHp").val($("#unitCurrentHp").val() - 10);
+    $("#monsterCurrentMp").val($("#monsterCurrentMp").val() - 45);
 }

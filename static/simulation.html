@@ -276,6 +276,33 @@
                     <a class="buttonLink" href='https://ko-fi.com/Lyrgard'>Donate</a>
                 </div>
             </div>
+            <div class="col-xs-12">
+                <div class="panel-heading">
+                    <span>Battle</span>
+                </div>
+                <div class="panel-body">
+                    <div class="col-xs-6">
+                        <div class = "input-group">
+                            <span>Monster</span>
+                            <input id="monsterCurrentHp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
+                            <input id="monsterCurrentMp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
+                        </div>
+                        <div class = "input-group">
+                            <span>Unit</span>
+                            <input id="unitCurrentHp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
+                            <input id="unitCurrentMp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
+                        </div>
+                    </div>
+                    <div class="form-group flex-form-group">
+                        <span>Atk skill</span>
+                        <select id="atkSkillSelect" name="atkSkill" class="form-control"></select>
+                    </div>
+                    <div class="atkButtons btn-group">
+                        <button class="atkBtn btn" onclick="unitAttack()">ATK</button>
+                        <button class="monsterAtkBtn btn" onclick="monsterAttack()">Mon ATK</button>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="modal fade" id="fixItemModal" role="dialog">

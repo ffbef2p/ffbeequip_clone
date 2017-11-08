@@ -151,6 +151,7 @@ function treatUnit(unitId, unitIn, skills, enhancementsByUnitId) {
     data["equip"] = getEquip(unitIn.equip);
     data["id"] = maxRarityUnitId;
     data.skills = getPassives(unitId, unitIn.skills, skills, enhancementsByUnitId[unitId])
+    data.attackSkills = [1, 1, [250, -50], [0, 0, 0, 0, 0, 0, -50, 0]];
     return unit;
 }
 
