@@ -1130,6 +1130,7 @@ function logBuild(build, value, esper) {
                 bonusPercent = result.bonusPercent + "%";
             }
             $("#resultStats ." + baseStats[statIndex] + " .bonus").html(bonusPercent);
+            $("#unit" + (currentUnitIndex + 1) + "Current_" + baseStats[statIndex]).val(Math.floor(result.total));
         }
         $("#resultStats ." + builds[currentUnitIndex].statToMaximize).addClass("statToMaximize");
         if (builds[currentUnitIndex].statToMaximize == "atk") {
@@ -1858,12 +1859,28 @@ function populateItemStat() {
 	}
 }
 
-function unitAttack() {
-    $("#monsterCurrentHp").val($("#monsterCurrentHp").val() - 10);
-    $("#unitCurrentMp").val($("#unitCurrentMp").val() - 45);
+function unitAttack(unitIndex) {
+    var damage = physicalAttack("unit" + unitIndex + "Current_", "monsterCurrent_", 2.1, 50);
+
+    $("#unit" + unitIndex + "Atk .damageResult").html(damage);
+    $("#unit" + unitIndex + "Atk .damage").removeClass("hidden");
+    $("#monsterCurrent_hp").val($("#monsterCurrent_hp").val() - damage);
+    $("#unit" + unitIndex + "Current_mp").val($("#unit" + unitIndex + "Current_mp").val() - 45);
 }
 
-function monsterAttack() {
-    $("#unitCurrentHp").val($("#unitCurrentHp").val() - 10);
-    $("#monsterCurrentMp").val($("#monsterCurrentMp").val() - 45);
+function monsterAttack(unitIndex) {
+    var damage = physicalAttack("monsterCurrent_", "unit" + unitIndex + "Current_", 2.1, 50);
+
+    $("#monsterAtk .damageResult").html(damage);
+    $("#monsterAtk .damage").removeClass("hidden");
+    $("#unit" + unitIndex + "Current_hp").val($("#unit" + unitIndex + "Current_hp").val() - damage);
+    $("#monsterCurrent_mp").val($("#monsterCurrent_mp").val() - 45);
+}
+
+function physicalAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef) {
+    var atk = $("#" + atkUnitPrefix + "atk").val();
+    var def = $("#" + defUnitPrefix + "def").val();
+
+    var damage = atk * atk / (def * (100 - ignoreDef) / 100) * multiplier; /* * killer * elemetal_weakness / elemental_resistence */
+    return Math.floor(damage);
 }

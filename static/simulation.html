@@ -208,6 +208,163 @@
                         </table>
                     </div>
                 </div>
+                <div class="panel panel-default battle">
+                    <div class="panel-heading">
+                        <span>Battle</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="battleCurrentUnits">
+                            <div class="col-xs-12">
+                                <span>Monster</span>
+                            </div>                        
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">HP</span>
+                                    <input id="monsterCurrent_hp" type = "text" class = "form-control" value = "35000000" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>                        
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">MP</span>
+                                    <input id="monsterCurrent_mp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">ATK</span>
+                                    <input id="monsterCurrent_atk" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">DEF</span>
+                                    <input id="monsterCurrent_def" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">MAG</span>
+                                    <input id="monsterCurrent_mag" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">SPR</span>
+                                    <input id="monsterCurrent_spr" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div id=monsterAtk class="col-xs-6">
+                                <div class="form-group flex-form-group">
+                                    <span>Monster Atk skill</span>
+                                    <select id="monsterAtkSkillSelect" name="atkSkill" class="form-control"></select>
+                                </div>
+                                <div class="atkButtons btn-group">
+                                    <button class="monsterAtkBtn btn" onclick="monsterAttack(1)">Mon ATK</button>
+                                    <span class="damage hidden">Damage: </span><span class="damageResult"></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <span>Unit1</span>
+                            </div>                        
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">HP</span>
+                                    <input id="unit1Current_hp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>                        
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">MP</span>
+                                    <input id="unit1Current_mp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">ATK</span>
+                                    <input id="unit1Current_atk" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">DEF</span>
+                                    <input id="unit1Current_def" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">MAG</span>
+                                    <input id="unit1Current_mag" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">SPR</span>
+                                    <input id="unit1Current_spr" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div id=unit1Atk class="col-xs-6">
+                                <div class="form-group flex-form-group">
+                                    <span>Atk skill</span>
+                                    <select id="unit1AtkSkillSelect" name="atkSkill" class="form-control"></select>
+                                </div>
+                                <div class="atkButtons btn-group">
+                                    <button class="atkBtn btn" onclick="unitAttack(1)">ATK</button>
+                                    <span class="damage hidden">Damage: </span><span class="damageResult"></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <span>Unit2</span>
+                            </div>                        
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">HP</span>
+                                    <input id="unit2Current_hp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>                        
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">MP</span>
+                                    <input id="unit2Current_mp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">ATK</span>
+                                    <input id="unit2Current_atk" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">DEF</span>
+                                    <input id="unit2Current_def" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">MAG</span>
+                                    <input id="unit2Current_mag" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">SPR</span>
+                                    <input id="unit2Current_spr" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
+                                </div>
+                            </div>
+                            <div id=unit2Atk class="col-xs-6">
+                                <div class="form-group flex-form-group">
+                                    <span>Atk skill</span>
+                                    <select id="unit2AtkSkillSelect" name="atkSkill" class="form-control"></select>
+                                </div>
+                                <div class="atkButtons btn-group">
+                                    <button class="atkBtn btn" onclick="unitAttack(2)">ATK</button>
+                                    <span class="damage hidden">Damage: </span><span class="damageResult"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-xs-6">
                 <ul id="unitTabs" class="nav nav-tabs">
@@ -274,33 +431,6 @@
                 </div>
                 <div>
                     <a class="buttonLink" href='https://ko-fi.com/Lyrgard'>Donate</a>
-                </div>
-            </div>
-            <div class="col-xs-12">
-                <div class="panel-heading">
-                    <span>Battle</span>
-                </div>
-                <div class="panel-body">
-                    <div class="col-xs-6">
-                        <div class = "input-group">
-                            <span>Monster</span>
-                            <input id="monsterCurrentHp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
-                            <input id="monsterCurrentMp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
-                        </div>
-                        <div class = "input-group">
-                            <span>Unit</span>
-                            <input id="unitCurrentHp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
-                            <input id="unitCurrentMp" type = "text" class = "form-control" value = "3500" onkeypress="return isNumber(event)">
-                        </div>
-                    </div>
-                    <div class="form-group flex-form-group">
-                        <span>Atk skill</span>
-                        <select id="atkSkillSelect" name="atkSkill" class="form-control"></select>
-                    </div>
-                    <div class="atkButtons btn-group">
-                        <button class="atkBtn btn" onclick="unitAttack()">ATK</button>
-                        <button class="monsterAtkBtn btn" onclick="monsterAttack()">Mon ATK</button>
-                    </div>
                 </div>
             </div>
         </div>
