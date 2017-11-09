@@ -150,8 +150,8 @@ function treatUnit(unitId, unitIn, skills, enhancementsByUnitId) {
     data["sex"] = unitIn.sex.toLowerCase();
     data["equip"] = getEquip(unitIn.equip);
     data["id"] = maxRarityUnitId;
-    data.skills = getPassives(unitId, unitIn.skills, skills, enhancementsByUnitId[unitId])
-    data.attackSkills = [1, 1, [250, -50], [0, 0, 0, 0, 0, 0, -50, 0]];
+    data.skills = getPassives(unitId, unitIn.skills, skills, enhancementsByUnitId[unitId]);
+    data.attackSkills = getActiveSkills(unitId, unitIn.skills, skills, enhancementsByUnitId[unitId]);
     return unit;
 }
 
@@ -382,6 +382,107 @@ function getPassives(unitId, skillsIn, skills, enhancements) {
     return skillsOut;
 }
 
+function getActiveSkills(unitId, skillsIn, skills, enhancements) {
+    var skillsOut = [];
+    
+    for (skillIndex in skillsIn) {
+        var skillId = skillsIn[skillIndex].id.toString();
+        if (enhancements) {
+            while(enhancements[skillId]) {
+                skillId = enhancements[skillId];
+            }
+        }
+        
+        var skillIn = skills[skillId];
+        
+        if (!skillIn.active) {
+            continue;
+        }
+        if ((skillIn.attack_type.toLowerCase() == "none") || (skillIn.attack_count < 1)) {
+            continue;
+        }
+
+        var attackSkill = {};
+        addToStat(attackSkill, "name", skillIn.name);
+
+        if (skillIn["effects_raw"][0][0] == 2) {
+            addToStat(attackSkill, "target", "MT");
+        } else {
+            addToStat(attackSkill, "target", "ST");
+        }
+
+        var doesDamage = false;
+        for (var rawEffectIndex in skillIn["effects_raw"]) {
+            var rawEffect = skillIn["effects_raw"][rawEffectIndex];
+            var effectFlag = rawEffect[2];
+            if (rawEffect.length >= 4) {
+                var atkRawEffect = rawEffect[3];
+                if (atkRawEffect.length >= 4) {
+                    if ((effectFlag == 21) || (effectFlag == 70)) {
+                        // ignore def || spr
+                        if (skillIn.attack_type.toLowerCase() == "hybrid") {
+                            appendToList(attackSkill, "multiplier", atkRawEffect[atkRawEffect.length - 3]);
+                            appendToList(attackSkill, "multiplier", atkRawEffect[atkRawEffect.length - 2]);
+                        } else {
+                            addToStat(attackSkill, "multiplier", atkRawEffect[atkRawEffect.length - 2]);
+                        }
+                        if (effectFlag == 21) {
+                            addToStat(attackSkill, "ignoreDef", -atkRawEffect[atkRawEffect.length - 1]);
+                        } else {
+                            addToStat(attackSkill, "ignoreSpr", atkRawEffect[atkRawEffect.length - 1]);
+                        }
+                        doesDamage = true;
+                    } else if (effectFlag == 33) {
+                        // resistance
+                        var lowerResistRawEffect = rawEffect[3];
+                        var lowerResistIndex = 0;
+                        for (var obj in lowerResistRawEffect) {
+                            if (lowerResistIndex >= elementsMap.length) {
+                                break;
+                            }
+                            if (lowerResistRawEffect[lowerResistIndex] < 0) {
+                                var elementName = elementsMap[1 + lowerResistIndex];
+                                addToList(attackSkill, "lowerResist" + elementName, lowerResistRawEffect[lowerResistIndex]);
+                            }
+                            ++lowerResistIndex;
+                        }
+                    } else if ((effectFlag == 1) || (effectFlag == 15) || (effectFlag == 40)) {
+                        // physical || magical || hybrid
+                        if (skillIn.attack_type.toLowerCase() == "hybrid") {
+                            appendToList(attackSkill, "multiplier", atkRawEffect[atkRawEffect.length - 2]);
+                            appendToList(attackSkill, "multiplier", atkRawEffect[atkRawEffect.length - 1]);
+                        } else {
+                            addToStat(attackSkill, "multiplier", atkRawEffect[atkRawEffect.length - 1]);
+                        }
+                        doesDamage = true;
+                    } else if (effectFlag == 72) {
+                        // cummulative damage, eg -ja spell
+                        addToStat(attackSkill, "multiplier", atkRawEffect[atkRawEffect.length - 3] + atkRawEffect[atkRawEffect.length - 4]);
+                        addToStat(attackSkill, "chargeIncremental", atkRawEffect[atkRawEffect.length - 2]);
+                        addToStat(attackSkill, "chargeMax", atkRawEffect[atkRawEffect.length - 1]);
+                        doesDamage = true;
+                    }
+                }
+            }
+        }
+
+        if (!doesDamage) {
+            continue;
+        }
+//divine ruination: "effects_raw": [[1, 1, 21, [0,  0,  200,  -50]], [1, 1, 33, [0,  0,  0,  0,  0,  0,  -50,  0,  1,  3]]],
+          
+
+        addToStat(attackSkill, "atkType", skillIn.attack_type);
+        addToStat(attackSkill, "elemental", skillIn.element_inflict);
+        addToStat(attackSkill, "atkCount", skillIn.attack_count);
+        addToStat(attackSkill, "atkFrames", skillIn.attack_frames);
+        addToStat(attackSkill, "effectFrames", skillIn.effect_frames);
+        skillsOut.push(attackSkill);
+    }
+
+    return skillsOut;
+}
+
 function addToStat(skill, stat, value) {
     if (!skill[stat]) {
         skill[stat] = value;
@@ -397,6 +498,14 @@ function addToList(skill, listName, value) {
         if (!skill[listName].includes(value)) {
             skill[listName].push(value);
         }
+    }
+}
+
+function appendToList(skill, listName, value) {
+    if (!skill[listName]) {
+        skill[listName] = [value];
+    } else {
+        skill[listName].push(value);
     }
 }
 
@@ -468,6 +577,68 @@ function formatOutput(units) {
             }
             result+= "}"
         }
+        result += "\n\t\t],";
+        
+        result += "\n\t\t\"atkSkills\": [";
+        firstSkill = true;
+        for (var skillIndex in unit.attackSkills) {
+            var skill = unit.attackSkills[skillIndex];
+            if (firstSkill) {
+                firstSkill = false;
+            } else {
+                result+= ",";
+            }
+            result+= "\n\t\t\t{"
+            var firstProperty = true;
+
+            if (skill.name) {
+                result += "\"name\":\"" + skill.name + "\", ";
+            }
+            if (skill.target == "MT") {
+                result += "\"target\":\"MT\", ";
+            } else {
+                result += "\"target\":\"ST\", ";
+            }
+            if (skill.atkType) {
+                result += "\"atkType\":\"" + skill.atkType + "\", ";
+            }
+            if (skill.elemental) {
+                result += "\"elemental\":\"" + skill.elemental + "\", ";
+            }
+            if (skill.count > 0) {
+                result += "\"atkCount\":" + JSON.stringify(skill.atkCount) + ", ";
+            } else {
+                result += "\"atkCount\":1, ";
+            }
+            if (skill.multiplier) {
+                result += "\"multiplier\":" + JSON.stringify(skill.multiplier) + ", ";
+            }
+            if (skill.chargeIncremental) {
+                result += "\"chargeIncremental\":" + JSON.stringify(skill.chargeIncremental) + ", ";
+            }            
+            if (skill.chargeMax) {
+                result += "\"chargeMax\":" + JSON.stringify(skill.chargeMax) + ", ";
+            }            
+            if (skill.ignoreDef) {
+                result += "\"ignoreDef\":" + JSON.stringify(skill.ignoreDef) + ", ";
+            }
+            if (skill.ignoreSpr) {
+                result += "\"ignoreSpr\":" + JSON.stringify(skill.ignoreSpr) + ", ";
+            }
+            for (var elementIndex in elementsMap) {
+                if (skill["lowerResist" + elementsMap[elementIndex]]) {
+                    result += "\"lowerResist" + elementsMap[elementIndex] + "\":\"" + skill["lowerResist" + elementsMap[elementIndex]] + "\", ";
+                }
+            }
+            if (skill.atkFrames) {
+                result += "\"atkFrames\":\"" + skill.atkFrames + "\", ";
+            }
+            if (skill.effectFrames) {
+                result += "\"effectFrames\":\"" + skill.effectFrames + "\"";
+            }
+            result+= "}"
+        }
+
         result += "\n\t\t]";
         
         result += "\n\t}";

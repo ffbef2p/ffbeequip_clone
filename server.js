@@ -9,6 +9,7 @@ var app = express();
 let driveConfig = require('drive-config');
 var inventoryFile = null;
 
+require('./tools/parseUnits.js');
 
 if (process.argv.length > 2) {
     inventoryFile = process.argv[2];
@@ -39,6 +40,7 @@ app.post('/:server/items/temp', function(req, res) {
     }
 });
 
+/*
 app.get('/googleOAuthUrl', function(req, res) {
     var url = getOAuthUrl();
     res.status(200).json({"url": url});
@@ -209,10 +211,12 @@ function migrateFromNameToId(itemInventory) {
     }
     return itemInventory;
 }
+*/
 
 app.use(express.static(__dirname + '/static/')); //where your static content is located in your filesystem);
-app.listen(3000); //the port you want to use
+app.listen(8800); //the port you want to use
 
+/*
 var OAuth2 = google.auth.OAuth2;
 var googleOAuthCredential;
 
@@ -242,6 +246,7 @@ function getOAuthUrl() {
         // state: { foo: 'bar' }
     });
 }
+*/
 
 
 var safeValues = ["type","hp","hp%","mp","mp%","atk","atk%","def","def%","mag","mag%","spr","spr%","evade","doubleHand","element","resist","ailments","killers","exclusiveSex","partialDualWield","equipedConditions","server"];

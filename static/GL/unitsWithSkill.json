@@ -11,6 +11,9 @@
 		"equip":["dagger","sword","greatSword","hammer","mace","lightShield","heavyShield","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":10, "def%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Lasswell": {
@@ -25,6 +28,9 @@
 		"skills": [
 			{"atk%":30},
 			{"atk%":40, "def%":10, "mag%":20, "spr%":10, "equipedConditions":["katana"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Fina": {
@@ -39,6 +45,9 @@
 		"skills": [
 			{"mp%":30, "spr%":30},
 			{"spr%":50, "equipedConditions":["bow"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Dark Fina": {
@@ -52,6 +61,9 @@
 		"equip":["staff","rod","whip","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":30, "mag%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Nichol": {
@@ -65,6 +77,9 @@
 		"equip":["dagger","staff","rod","hat","clothes","robe"],
 		"skills": [
 			{"mp%":10, "mag%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Lid": {
@@ -78,6 +93,9 @@
 		"equip":["staff","rod","bow","axe","hammer","gun","mace","hat","clothes","lightArmor"],
 		"skills": [
 			{"atk%":10, "spr%":10, "killers":[{"name":"machine","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Sakura": {
@@ -91,6 +109,9 @@
 		"equip":["dagger","staff","rod","axe","spear","mace","hat","clothes","robe"],
 		"skills": [
 			{"hp%":10, "mp%":20, "atk%":20, "mag%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Jake": {
@@ -104,6 +125,9 @@
 		"equip":["dagger","sword","greatSword","spear","gun","hat","clothes","lightArmor"],
 		"skills": [
 			{"atk%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Rizer": {
@@ -117,6 +141,9 @@
 		"equip":["dagger","sword","axe","hammer","spear","mace","lightShield","heavyShield","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"atk%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Leah": {
@@ -129,6 +156,9 @@
 		},
 		"equip":["staff","mace","hat","clothes","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Tronn": {
@@ -141,6 +171,9 @@
 		},
 		"equip":["dagger","rod","hat","clothes","lightArmor","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Eldin": {
@@ -153,6 +186,9 @@
 		},
 		"equip":["dagger","sword","throwing","fist","lightShield","hat","clothes","lightArmor","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Baurg": {
@@ -167,6 +203,9 @@
 		"skills": [
 			{"hp%":10},
 			{"atk%":50, "equipedConditions":["unarmed"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Gimlee": {
@@ -180,6 +219,9 @@
 		"equip":["bow","gun","hat","clothes"],
 		"skills": [
 			{"killers":[{"name":"beast","physical":50},{"name":"bird","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Maxell": {
@@ -193,6 +235,9 @@
 		"equip":["throwing","gun","hat","clothes","lightArmor"],
 		"skills": [
 			{"mp%":10, "atk%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Liza": {
@@ -206,6 +251,9 @@
 		"equip":["dagger","harp","hat","clothes"],
 		"skills": [
 			{"mp%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Shiki": {
@@ -219,6 +267,9 @@
 		"equip":["dagger","katana","hat","clothes","lightArmor"],
 		"skills": [
 			{"atk%":10, "evade":{"physical":10}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Mizell": {
@@ -231,6 +282,9 @@
 		},
 		"equip":["dagger","staff","mace","hat","clothes","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ronaldo": {
@@ -243,6 +297,9 @@
 		},
 		"equip":["dagger","sword","greatSword","lightShield","hat","helm","clothes","lightArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Mel": {
@@ -256,6 +313,9 @@
 		"equip":["dagger","sword","staff","lightShield","hat","helm","clothes","lightArmor"],
 		"skills": [
 			{"killers":[{"name":"plant","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Clyne": {
@@ -269,6 +329,9 @@
 		"equip":["dagger","sword","greatSword","mace","lightShield","heavyShield","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"def%":10, "killers":[{"name":"demon","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Anzelm": {
@@ -281,6 +344,9 @@
 		},
 		"equip":["dagger","sword","staff","rod","lightShield","hat","helm","clothes","lightArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Luna": {
@@ -294,6 +360,9 @@
 		"equip":["bow","gun","hat","clothes"],
 		"skills": [
 			{"killers":[{"name":"beast","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Bedile": {
@@ -306,6 +375,9 @@
 		},
 		"equip":["dagger","sword","greatSword","hat","clothes","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Duane": {
@@ -319,6 +391,9 @@
 		"equip":["dagger","sword","axe","hammer","spear","lightShield","heavyShield","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"atk%":20, "def%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Cerius": {
@@ -332,6 +407,9 @@
 		"equip":["dagger","staff","axe","whip","mace","hat","helm","clothes","lightArmor","robe"],
 		"skills": [
 			{"mp%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Roselia": {
@@ -345,6 +423,9 @@
 		"equip":["staff","harp","mace","lightShield","hat","clothes","robe"],
 		"skills": [
 			{"hp%":20, "mp%":30, "def%":10, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Medius": {
@@ -359,6 +440,9 @@
 		"skills": [
 			{"hp%":20, "partialDualWield":["gun"]},
 			{"atk%":30, "equipedConditions":["gun"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Sarai": {
@@ -372,6 +456,9 @@
 		"equip":["dagger","staff","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Paula": {
@@ -384,6 +471,9 @@
 		},
 		"equip":["rod","hat","clothes","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Kenyu": {
@@ -397,6 +487,9 @@
 		"equip":["fist","hat","clothes"],
 		"skills": [
 			{"hp%":60}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ollie": {
@@ -410,6 +503,9 @@
 		"equip":["sword","greatSword","bow","axe","hammer","spear","mace","lightShield","heavyShield","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"def%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Carrie": {
@@ -422,6 +518,9 @@
 		},
 		"equip":["dagger","sword","bow","gun","hat","clothes","lightArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Skaha": {
@@ -435,6 +534,9 @@
 		"equip":["dagger","sword","spear","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"atk%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Montana": {
@@ -447,6 +549,9 @@
 		},
 		"equip":["dagger","sword","bow","hammer","whip","throwing","lightShield","hat","clothes","lightArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Russell": {
@@ -460,6 +565,9 @@
 		"equip":["dagger","sword","greatSword","axe","hammer","spear","mace","lightShield","heavyShield","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"killers":[{"name":"human","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Miyuki": {
@@ -473,6 +581,9 @@
 		"equip":["dagger","katana","throwing","hat","clothes"],
 		"skills": [
 			{"hp%":30, "atk%":30, "mag%":20, "evade":{"physical":20}, "partialDualWield":["dagger","katana","throwing"], "killers":[{"name":"human","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Gilbert": {
@@ -485,6 +596,9 @@
 		},
 		"equip":["dagger","sword","harp","hat","clothes","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Xiao": {
@@ -499,6 +613,9 @@
 		"skills": [
 			{"hp%":20, "atk%":50},
 			{"atk%":50, "equipedConditions":["unarmed"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Rakshasa": {
@@ -511,6 +628,9 @@
 		},
 		"equip":["dagger","sword","rod","bow","lightShield","hat","clothes","lightArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ludmille": {
@@ -524,6 +644,9 @@
 		"equip":["dagger","sword","greatSword","rod","hammer","spear","mace","lightShield","heavyShield","hat","helm","clothes","lightArmor","heavyArmor","robe"],
 		"skills": [
 			{"hp%":10, "mp%":10, "mag%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Charlotte": {
@@ -537,6 +660,9 @@
 		"equip":["dagger","sword","staff","rod","mace","lightShield","heavyShield","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":25, "atk%":10, "def%":30, "spr%":10, "killers":[{"name":"undead","physical":50},{"name":"demon","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Artemios": {
@@ -550,6 +676,9 @@
 		"equip":["dagger","bow","hat","clothes","lightArmor"],
 		"skills": [
 			{"killers":[{"name":"beast","physical":50},{"name":"human","physical":50},{"name":"demon","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Chizuru": {
@@ -564,6 +693,9 @@
 		"skills": [
 			{"atk%":20, "evade":{"physical":40}},
 			{"atk%":25, "def%":25, "mag%":25, "spr%":25, "equipedConditions":["katana"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Hayate": {
@@ -577,6 +709,9 @@
 		"equip":["dagger","katana","throwing","hat","clothes","lightArmor"],
 		"skills": [
 			{"hp%":10, "atk%":20, "mag%":30, "evade":{"physical":20}, "killers":[{"name":"human","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Elle": {
@@ -591,6 +726,9 @@
 		"skills": [
 			{"atk%":20, "def%":20},
 			{"atk%":20, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Luka": {
@@ -604,6 +742,9 @@
 		"equip":["staff","harp","mace","hat","clothes","robe"],
 		"skills": [
 			{"hp%":30, "mp%":20, "spr%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Mercedes": {
@@ -618,6 +759,9 @@
 		"skills": [
 			{"hp%":20, "atk%":20, "killers":[{"name":"aquatic","physical":50}]},
 			{"atk%":100, "equipedConditions":["axe"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Lawrence": {
@@ -631,6 +775,9 @@
 		"equip":["dagger","sword","katana","lightShield","hat","clothes","lightArmor"],
 		"skills": [
 			{"hp%":20, "atk%":20, "def%":10, "evade":{"physical":10}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Soleil": {
@@ -644,6 +791,9 @@
 		"equip":["dagger","staff","rod","whip","throwing","hat","clothes","robe"],
 		"skills": [
 			{"hp%":10, "mp%":35, "spr%":20, "evade":{"physical":30}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Shine": {
@@ -657,6 +807,9 @@
 		"equip":["dagger","sword","bow","whip","throwing","hat","clothes"],
 		"skills": [
 			{"hp%":10, "mp%":10, "atk%":20, "def%":20, "spr%":20, "evade":{"physical":10}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Shera": {
@@ -671,6 +824,9 @@
 		"skills": [
 			{"atk%":10, "def%":10, "spr%":10, "killers":[{"name":"demon","physical":50}]},
 			{"atk%":30, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Sozhe": {
@@ -685,6 +841,9 @@
 		"skills": [
 			{"hp%":30, "atk%":20, "def%":20, "killers":[{"name":"demon","physical":50},{"name":"dragon","physical":50}]},
 			{"atk%":30, "def%":30, "equipedConditions":["heavyArmor"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Heltich": {
@@ -698,6 +857,9 @@
 		"equip":["dagger","staff","rod","whip","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "mag%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Marie": {
@@ -711,6 +873,9 @@
 		"equip":["staff","rod","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":30, "spr%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Aileen": {
@@ -724,6 +889,9 @@
 		"equip":["dagger","sword","greatSword","katana","staff","rod","bow","axe","hammer","spear","harp","whip","throwing","gun","mace","fist","lightShield","hat","helm","clothes","lightArmor","heavyArmor","robe"],
 		"skills": [
 			{"hp%":20, "mp%":20, "atk%":60, "killers":[{"name":"machine","physical":50},{"name":"stone","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ulrica": {
@@ -737,6 +905,9 @@
 		"equip":["axe","hammer","mace","fist","hat","clothes","lightArmor"],
 		"skills": [
 			{"hp%":20, "atk%":10, "def%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Wilhelm": {
@@ -752,6 +923,9 @@
 			{"hp%":30, "def%":30, "spr%":20},
 			{"def%":25, "equipedConditions":["heavyShield"]},
 			{"def%":25, "equipedConditions":["heavyArmor"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Grace": {
@@ -765,6 +939,9 @@
 		"equip":["dagger","sword","staff","rod","gun","fist","lightShield","hat","clothes","lightArmor"],
 		"skills": [
 			{"hp%":60, "atk%":30, "def%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Abel": {
@@ -778,6 +955,9 @@
 		"equip":["dagger","sword","throwing","gun","fist","lightShield","hat","clothes","lightArmor"],
 		"skills": [
 			{"atk%":20, "killers":[{"name":"human","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Goken": {
@@ -794,6 +974,9 @@
 			{"atk%":20, "def%":20, "equipedConditions":["clothes"]},
 			{"atk%":20, "def%":20, "equipedConditions":["hat"]},
 			{"atk%":200, "equipedConditions":["unarmed"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Jean": {
@@ -807,6 +990,9 @@
 		"equip":["dagger","bow","throwing","gun","fist","lightShield","hat","clothes","lightArmor"],
 		"skills": [
 			{"hp%":10, "mp%":10, "atk%":10, "killers":[{"name":"human","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Camille": {
@@ -821,6 +1007,9 @@
 		"skills": [
 			{"hp%":10, "atk%":20},
 			{"atk%":30, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ilias": {
@@ -834,6 +1023,9 @@
 		"equip":["dagger","sword","staff","throwing","lightShield","hat","helm","clothes","lightArmor"],
 		"skills": [
 			{"hp%":10, "mp%":40, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Fohlen": {
@@ -848,6 +1040,9 @@
 		"skills": [
 			{"hp%":40, "mp%":10, "atk%":30, "def%":20, "evade":{"physical":30}},
 			{"atk%":50, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Victoria": {
@@ -863,6 +1058,9 @@
 			{"mp%":30, "mag%":30},
 			{"mag%":20, "equipedConditions":["hat"]},
 			{"mag%":20, "equipedConditions":["robe"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Amelia": {
@@ -877,6 +1075,9 @@
 		"skills": [
 			{"hp%":20, "atk%":20, "def%":20, "partialDualWield":["gun"]},
 			{"atk%":20, "def%":20, "equipedConditions":["gun"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Beach Time Fina": {
@@ -890,6 +1091,9 @@
 		"equip":["staff","bow","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Seabreeze Dark Fina": {
@@ -903,6 +1107,9 @@
 		"equip":["staff","rod","whip","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":30, "mag%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Summer Lid": {
@@ -916,6 +1123,9 @@
 		"equip":["staff","rod","bow","axe","hammer","gun","mace","hat","clothes","lightArmor"],
 		"skills": [
 			{"atk%":10, "spr%":10, "killers":[{"name":"machine","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Bran": {
@@ -929,6 +1139,9 @@
 		"equip":["dagger","sword","greatSword","spear","fist","hat","helm","clothes","lightArmor","robe"],
 		"skills": [
 			{"hp%":20, "atk%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Lunera": {
@@ -943,6 +1156,9 @@
 		"skills": [
 			{"mp%":30, "mag%":30, "spr%":20},
 			{"mag%":50, "spr%":50, "equipedConditions":["bow"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ruggles": {
@@ -958,6 +1174,9 @@
 			{"hp%":50, "atk%":10, "singleWieldingOneHanded":{"atk":50}},
 			{"hp%":20, "atk%":20, "equipedConditions":["axe"]},
 			{"hp%":20, "atk%":20, "equipedConditions":["hammer"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Veritas of the Dark": {
@@ -972,6 +1191,9 @@
 		"skills": [
 			{"hp%":20, "mp%":20, "atk%":20, "def%":20, "mag%":20, "spr%":20},
 			{"atk%":50, "equipedConditions":["greatSword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Veritas of the Heavens": {
@@ -985,6 +1207,9 @@
 		"equip":["dagger","sword","spear","lightShield","helm","lightArmor","heavyArmor"],
 		"skills": [
 			{"mp%":20, "atk%":20, "mag%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Veritas of the Waters": {
@@ -1000,6 +1225,9 @@
 			{"mp%":20, "mag%":20, "spr%":20},
 			{"mag%":25, "equipedConditions":["rod"]},
 			{"spr%":25, "equipedConditions":["staff"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Veritas of the Flame": {
@@ -1014,6 +1242,9 @@
 		"skills": [
 			{"hp%":30, "mp%":10, "atk%":20, "def%":20},
 			{"atk%":50, "equipedConditions":["axe"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Veritas of the Earth": {
@@ -1027,6 +1258,9 @@
 		"equip":["dagger","sword","hammer","spear","lightShield","heavyShield","helm","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":30, "def%":30, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Veritas of the Light": {
@@ -1042,6 +1276,9 @@
 			{"hp%":20, "mp%":20, "mag%":30, "spr%":10, "partialDualWield":["throwing","gun"], "killers":[{"name":"demon","physical":50,"magical":50},{"name":"machine","physical":50,"magical":50},{"name":"spirit","physical":50,"magical":50},{"name":"undead","physical":50,"magical":50}]},
 			{"mag%":50, "equipedConditions":["throwing"]},
 			{"atk%":50, "equipedConditions":["gun"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Helena": {
@@ -1056,6 +1293,9 @@
 		"skills": [
 			{"hp%":10, "mp%":10, "atk%":20, "def%":10, "spr%":10, "evade":{"physical":20}, "partialDualWield":["dagger","whip","throwing","gun"]},
 			{"def%":100, "equipedConditions":[null]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ayaka": {
@@ -1070,6 +1310,9 @@
 		"skills": [
 			{"hp%":20, "mp%":30, "spr%":30},
 			{"spr%":50, "equipedConditions":["staff"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Timothy": {
@@ -1083,6 +1326,9 @@
 		"equip":["harp","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Moogle": {
@@ -1096,6 +1342,9 @@
 		"equip":["spear","hat"],
 		"skills": [
 			{"hp%":10, "mp%":10, "atk%":10, "def%":10, "mag%":10, "spr%":10, "singleWieldingOneHanded":{"atk":50}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Guromu": {
@@ -1109,6 +1358,9 @@
 		"equip":["dagger","sword","greatSword","lightShield","hat","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":20, "atk%":10, "def%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Aura": {
@@ -1123,6 +1375,9 @@
 		"skills": [
 			{"mp%":20, "atk%":20, "spr%":20},
 			{"atk%":50, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Loren": {
@@ -1137,6 +1392,9 @@
 		"skills": [
 			{"hp%":30, "atk%":30, "def%":30, "spr%":30, "special":["dualWield"]},
 			{"atk%":50, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Kupolkan": {
@@ -1150,6 +1408,9 @@
 		"equip":["staff","hat","clothes","robe"],
 		"skills": [
 			{"hp%":20, "mp%":20, "spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ashteroze": {
@@ -1163,6 +1424,9 @@
 		"equip":["dagger","sword","whip","lightShield","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"mp%":10, "atk%":30, "spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Kelsus": {
@@ -1176,6 +1440,9 @@
 		"equip":["rod","axe","hammer","gun","mace","fist","lightShield","heavyShield","hat","helm","clothes","lightArmor","heavyArmor","robe"],
 		"skills": [
 			{"hp%":20, "atk%":30, "def%":20, "partialDualWield":["fist"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Nyalu": {
@@ -1190,6 +1457,9 @@
 		"skills": [
 			{"mp%":10},
 			{"mag%":30, "spr%":30, "equipedConditions":["hat"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Sandee": {
@@ -1203,6 +1473,9 @@
 		"equip":["staff","rod","harp","lightShield","hat","clothes","robe"],
 		"skills": [
 			{"mp%":10, "mag%":20, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Grinfield": {
@@ -1217,6 +1490,9 @@
 		"skills": [
 			{"hp%":20},
 			{"atk%":20, "mag%":20, "equipedConditions":["clothes"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Elfreeda": {
@@ -1232,6 +1508,9 @@
 			{"hp%":20, "atk%":30, "def%":20, "singleWielding":{"atk":50}},
 			{"def%":30, "spr%":50, "equipedConditions":["lightArmor"]},
 			{"def%":30, "spr%":50, "equipedConditions":["heavyArmor"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Conrad": {
@@ -1245,6 +1524,9 @@
 		"equip":["dagger","sword","greatSword","bow","axe","hammer","whip","gun","mace","lightShield","heavyShield","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"mp%":10, "atk%":10, "def%":10, "killers":[{"name":"machine","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Silvia": {
@@ -1259,6 +1541,9 @@
 		"skills": [
 			{"mp%":20, "atk%":20, "mag%":20},
 			{"atk%":20, "mag%":20, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Kamui": {
@@ -1272,6 +1557,9 @@
 		"equip":["sword","greatSword","katana","helm","lightArmor","heavyArmor"],
 		"skills": [
 			{"atk%":10, "def%":10, "spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Yuri": {
@@ -1285,6 +1573,9 @@
 		"equip":["dagger","katana","staff","rod","bow","whip","throwing","lightShield","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"hp%":30, "mp%":10, "atk%":30, "mag%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Roy": {
@@ -1298,6 +1589,9 @@
 		"equip":["dagger","staff","rod","bow","harp","hat","clothes","robe"],
 		"skills": [
 			{"hp%":20, "def%":20, "spr%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"William": {
@@ -1312,6 +1606,9 @@
 		"skills": [
 			{"mp%":30, "mag%":20},
 			{"mag%":50, "equipedConditions":["rod"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Chloe": {
@@ -1325,6 +1622,9 @@
 		"equip":["dagger","staff","rod","whip","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Amy": {
@@ -1338,6 +1638,9 @@
 		"equip":["dagger","bow","whip","gun","hat","helm","clothes","lightArmor"],
 		"skills": [
 			{"hp%":10, "atk%":10, "spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Duke": {
@@ -1352,6 +1655,9 @@
 		"skills": [
 			{"hp%":30, "atk%":30, "killers":[{"name":"beast","physical":50},{"name":"bird","physical":50},{"name":"dragon","physical":100}]},
 			{"atk%":50, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Olif": {
@@ -1366,6 +1672,9 @@
 		"skills": [
 			{"hp%":10, "def%":20, "spr%":20},
 			{"atk%":25, "spr%":25, "equipedConditions":["mace"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Mystea": {
@@ -1379,6 +1688,9 @@
 		"equip":["dagger","staff","rod","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":30, "def%":30, "spr%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Charie": {
@@ -1392,6 +1704,9 @@
 		"equip":["dagger","staff","harp","whip","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ryunan": {
@@ -1405,6 +1720,9 @@
 		"equip":["dagger","sword","spear","lightShield","helm","lightArmor"],
 		"skills": [
 			{"hp%":10, "atk%":10, "killers":[{"name":"dragon","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Jiraiya": {
@@ -1419,6 +1737,9 @@
 		"skills": [
 			{"hp%":20, "evade":{"physical":20}, "killers":[{"name":"human","physical":75,"magical":75}]},
 			{"atk%":50, "mag%":50, "equipedConditions":["katana"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Kaede": {
@@ -1433,6 +1754,9 @@
 		"skills": [
 			{"hp%":20, "mp%":20, "atk%":20, "def%":20},
 			{"atk%":50, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ohga": {
@@ -1446,6 +1770,9 @@
 		"equip":["sword","greatSword","katana","axe","hammer","spear","mace","fist","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":30, "atk%":50}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Otogiri": {
@@ -1459,6 +1786,9 @@
 		"equip":["dagger","katana","throwing","hat","clothes","robe"],
 		"skills": [
 			{"hp%":10, "mp%":20, "evade":{"physical":10}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ice Knight Lasswell": {
@@ -1475,6 +1805,9 @@
 			{"atk%":20, "def%":10, "mag%":20, "spr%":10, "equipedConditions":["katana"]},
 			{"atk%":40, "equipedConditions":["katana"]},
 			{"hp%":30, "mp%":30, "equipedConditions":["greatSword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Lotus Mage Fina": {
@@ -1492,6 +1825,9 @@
 			{"spr%":50, "equipedConditions":["bow"]},
 			{"mag%":50, "equipedConditions":["rod"]},
 			{"mag%":50, "equipedConditions":["whip"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Blossom Sage Sakura": {
@@ -1506,6 +1842,9 @@
 		"skills": [
 			{"hp%":20, "mp%":30, "mag%":30, "spr%":30},
 			{"mag%":50, "equipedConditions":["rod"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Kunshira": {
@@ -1521,6 +1860,9 @@
 			{"hp%":20, "atk%":30, "mag%":30, "partialDualWield":["sword","rod"], "killers":[{"name":"beast","physical":50,"magical":50},{"name":"human","physical":50,"magical":50},{"name":"spirit","physical":50,"magical":50}]},
 			{"atk%":30, "mag%":30, "equipedConditions":["sword"]},
 			{"atk%":30, "mag%":30, "equipedConditions":["rod"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Wadow": {
@@ -1536,6 +1878,9 @@
 			{"hp%":20, "mp%":10, "def%":10},
 			{"mag%":30, "equipedConditions":["throwing"]},
 			{"atk%":30, "equipedConditions":["katana"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Verun": {
@@ -1549,6 +1894,9 @@
 		"equip":["dagger","sword","greatSword","katana","axe","hammer","spear","throwing","gun","mace","fist","lightShield","heavyShield","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":20, "mp%":20, "def%":20, "spr%":20, "killers":[{"name":"stone","physical":75}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Cedona": {
@@ -1564,6 +1912,9 @@
 			{"evade":{"physical":20}, "killers":[{"name":"spirit","physical":50},{"name":"bug","physical":50},{"name":"plant","physical":50},{"name":"undead","physical":50},{"name":"aquatic","physical":50},{"name":"demon","physical":50},{"name":"machine","physical":50},{"name":"stone","physical":50}]},
 			{"atk%":30, "equipedConditions":["sword"]},
 			{"hp%":30, "equipedConditions":["lightShield"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Erwin": {
@@ -1577,6 +1928,9 @@
 		"equip":["dagger","sword","katana","rod","harp","lightShield","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"mp%":10, "atk%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Emma (Battle NPC)": {
@@ -1589,6 +1943,9 @@
 		},
 		"equip":[null],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Warrior of Light": {
@@ -1602,6 +1959,9 @@
 		"equip":["dagger","sword","greatSword","katana","staff","rod","bow","axe","hammer","spear","mace","fist","lightShield","heavyShield","hat","helm","clothes","lightArmor","heavyArmor","robe"],
 		"skills": [
 			{"hp%":20, "def%":30, "killers":[{"name":"undead","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Garland": {
@@ -1617,6 +1977,9 @@
 			{"hp%":20, "atk%":20, "singleWieldingOneHanded":{"atk":125}, "killers":[{"name":"human","physical":50}]},
 			{"atk%":25, "equipedConditions":["greatSword"]},
 			{"atk%":25, "equipedConditions":["helm"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Sarah": {
@@ -1630,6 +1993,9 @@
 		"equip":["spear","harp","whip","hat","clothes","robe"],
 		"skills": [
 			{"mp%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Firion": {
@@ -1659,6 +2025,9 @@
 			{"atk%":20, "def%":20, "equipedConditions":["sword"]},
 			{"atk%":20, "def%":20, "equipedConditions":["greatSword"]},
 			{"atk%":20, "def%":20, "equipedConditions":["katana"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Maria": {
@@ -1672,6 +2041,9 @@
 		"equip":["staff","bow","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Guy": {
@@ -1685,6 +2057,9 @@
 		"equip":["dagger","sword","axe","hammer","spear","fist","lightShield","hat","helm","clothes","lightArmor"],
 		"skills": [
 			{"hp%":10, "atk%":10, "def%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Leon": {
@@ -1699,6 +2074,9 @@
 		"skills": [
 			{"hp%":40, "atk%":20, "def%":20},
 			{"atk%":50, "def%":20, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Emperor": {
@@ -1713,6 +2091,9 @@
 		"skills": [
 			{"hp%":30, "mp%":20, "mag%":30},
 			{"mag%":50, "equipedConditions":["rod"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Paul": {
@@ -1725,6 +2106,9 @@
 		},
 		"equip":["dagger","sword","throwing","lightShield","hat","clothes","lightArmor","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Onion Knight": {
@@ -1739,6 +2123,9 @@
 		"skills": [
 			{"hp%":30, "mp%":30, "atk%":30, "killers":[{"name":"undead","physical":50}], "special":["dualWield"]},
 			{"atk%":50, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Luneth": {
@@ -1756,6 +2143,9 @@
 			{"atk%":50, "equipedConditions":["dagger"]},
 			{"atk%":50, "equipedConditions":["greatSword"]},
 			{"atk%":50, "equipedConditions":["katana"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Arc": {
@@ -1769,6 +2159,9 @@
 		"equip":["staff","rod","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "mag%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Refia": {
@@ -1782,6 +2175,9 @@
 		"equip":["staff","rod","mace","hat","clothes","robe"],
 		"skills": [
 			{"hp%":10, "mp%":20, "spr%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ingus": {
@@ -1795,6 +2191,9 @@
 		"equip":["dagger","sword","staff","rod","lightShield","hat","helm","clothes","lightArmor","robe"],
 		"skills": [
 			{"hp%":20, "atk%":20, "mag%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Desch": {
@@ -1808,6 +2207,9 @@
 		"equip":["dagger","sword","katana","bow","spear","throwing","lightShield","hat","helm","clothes","lightArmor"],
 		"skills": [
 			{"hp%":20, "def%":20, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Cloud of Darkness": {
@@ -1821,6 +2223,9 @@
 		"equip":["staff","rod","throwing","mace","hat","clothes","robe"],
 		"skills": [
 			{"hp%":20, "atk%":50, "killers":[{"name":"human","physical":175,"magical":125}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Aria": {
@@ -1834,6 +2239,9 @@
 		"equip":["staff","harp","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "spr%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Sara": {
@@ -1847,6 +2255,9 @@
 		"equip":["dagger","staff","rod","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "mag%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Cecil": {
@@ -1860,6 +2271,9 @@
 		"equip":["dagger","sword","greatSword","katana","axe","spear","lightShield","heavyShield","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":20, "atk%":20, "def%":50, "spr%":20, "killers":[{"name":"demon","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Dark Knight Cecil": {
@@ -1873,6 +2287,9 @@
 		"equip":["dagger","sword","greatSword","katana","spear","lightShield","heavyShield","helm","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":20, "atk%":70, "def%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Kain": {
@@ -1887,6 +2304,9 @@
 		"skills": [
 			{"hp%":10, "atk%":20, "killers":[{"name":"dragon","physical":50}]},
 			{"atk%":20, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Rosa": {
@@ -1900,6 +2320,9 @@
 		"equip":["dagger","staff","rod","bow","harp","whip","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "spr%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Rydia": {
@@ -1913,6 +2336,9 @@
 		"equip":["dagger","rod","whip","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"mp%":10, "mag%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Tellah": {
@@ -1926,6 +2352,9 @@
 		"equip":["staff","rod","hat","clothes","robe"],
 		"skills": [
 			{"mag%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Edge": {
@@ -1939,6 +2368,9 @@
 		"equip":["dagger","sword","katana","throwing","fist","hat","clothes","lightArmor"],
 		"skills": [
 			{"atk%":10, "killers":[{"name":"human","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"King Giott": {
@@ -1952,6 +2384,9 @@
 		"equip":["axe","hammer","mace","lightShield","heavyShield","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"atk%":10, "killers":[{"name":"machine","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Golbez": {
@@ -1964,6 +2399,9 @@
 		},
 		"equip":["sword","greatSword","rod","mace","lightShield","heavyShield","helm","lightArmor","heavyArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Bartz": {
@@ -1978,6 +2416,9 @@
 		"skills": [
 			{"hp%":30, "mp%":10, "atk%":30, "def%":30, "mag%":10, "spr%":10},
 			{"atk%":20, "mag%":20, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Lenna": {
@@ -1991,6 +2432,9 @@
 		"equip":["dagger","staff","rod","bow","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Galuf": {
@@ -2005,6 +2449,9 @@
 		"skills": [
 			{"def%":10},
 			{"def%":20, "spr%":20, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Faris": {
@@ -2018,6 +2465,9 @@
 		"equip":["dagger","sword","greatSword","katana","axe","hammer","spear","throwing","fist","lightShield","hat","helm","clothes","lightArmor"],
 		"skills": [
 			{"atk%":20, "mag%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Krile": {
@@ -2032,6 +2482,9 @@
 		"skills": [
 			{"mp%":20},
 			{"mag%":50, "spr%":50, "equipedConditions":["staff"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Exdeath": {
@@ -2045,6 +2498,9 @@
 		"equip":["dagger","sword","staff","rod","mace","lightShield","heavyShield","helm","lightArmor","heavyArmor"],
 		"skills": [
 			{"mp%":20, "mag%":30, "killers":[{"name":"human","magical":50},{"name":"bird","magical":50},{"name":"beast","magical":50},{"name":"plant","magical":50},{"name":"bug","magical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Gilgamesh": {
@@ -2063,6 +2519,9 @@
 			{"atk%":50, "equipedConditions":["greatSword"]},
 			{"atk%":50, "equipedConditions":["dagger"]},
 			{"atk%":50, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Terra": {
@@ -2076,6 +2535,9 @@
 		"equip":["dagger","sword","staff","rod","gun","lightShield","hat","clothes"],
 		"skills": [
 			{"hp%":15, "mp%":35, "mag%":50}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Magitek Armor Terra": {
@@ -2088,6 +2550,9 @@
 		},
 		"equip":["dagger","sword","staff","rod","gun","lightShield","hat","clothes"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Trance Terra": {
@@ -2101,6 +2566,9 @@
 		"equip":["dagger","sword","staff","rod","gun","lightShield","hat","clothes","robe"],
 		"skills": [
 			{"hp%":20, "mp%":30, "mag%":110, "spr%":50, "evade":{"physical":30}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Locke": {
@@ -2113,6 +2581,9 @@
 		},
 		"equip":["dagger","sword","greatSword","whip","throwing","lightShield","hat","helm","clothes","lightArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Edgar": {
@@ -2125,6 +2596,9 @@
 		},
 		"equip":["dagger","sword","throwing","gun","lightShield","hat","helm","clothes","lightArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Sabin": {
@@ -2139,6 +2613,9 @@
 		"skills": [
 			{"hp%":20},
 			{"atk%":50, "equipedConditions":["unarmed"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Shadow": {
@@ -2152,6 +2629,9 @@
 		"equip":["dagger","sword","katana","throwing","hat","clothes","lightArmor"],
 		"skills": [
 			{"killers":[{"name":"human","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Cyan": {
@@ -2165,6 +2645,9 @@
 		"equip":["dagger","sword","katana","hat","clothes","lightArmor"],
 		"skills": [
 			{"atk%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Celes": {
@@ -2178,6 +2661,9 @@
 		"equip":["dagger","sword","greatSword","staff","rod","mace","lightShield","hat","helm","clothes","lightArmor"],
 		"skills": [
 			{"mag%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Setzer": {
@@ -2192,6 +2678,9 @@
 		"skills": [
 			{"mp%":20, "atk%":20, "spr%":20, "evade":{"physical":10}},
 			{"atk%":50, "equipedConditions":["throwing"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Gau": {
@@ -2205,6 +2694,9 @@
 		"equip":["dagger","fist","clothes","lightArmor"],
 		"skills": [
 			{"hp%":10, "atk%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Wedge": {
@@ -2217,6 +2709,9 @@
 		},
 		"equip":["gun","lightShield","helm","lightArmor","heavyArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Biggs": {
@@ -2229,6 +2724,9 @@
 		},
 		"equip":["gun","lightShield","helm","lightArmor","heavyArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Kefka": {
@@ -2242,6 +2740,9 @@
 		"equip":["dagger","staff","rod","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "mag%":60, "evade":{"physical":20}, "killers":[{"name":"human","magical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Leo": {
@@ -2255,6 +2756,9 @@
 		"equip":["dagger","sword","greatSword","axe","hammer","spear","lightShield","heavyShield","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"atk%":20, "def%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Cloud": {
@@ -2268,6 +2772,9 @@
 		"equip":["sword","greatSword","mace","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":50, "mp%":50, "atk%":30, "def%":30, "mag%":30, "spr%":30, "singleWielding":{"atk":100}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Zidane": {
@@ -2282,6 +2789,9 @@
 		"skills": [
 			{"hp%":20, "def%":10, "evade":{"physical":20}, "partialDualWield":["dagger","throwing"]},
 			{"atk%":50, "equipedConditions":["dagger"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Vivi": {
@@ -2296,6 +2806,9 @@
 		"skills": [
 			{"hp%":10, "mp%":20},
 			{"mag%":50, "equipedConditions":["rod"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Garnet": {
@@ -2309,6 +2822,9 @@
 		"equip":["dagger","staff","rod","mace","hat","clothes","robe"],
 		"skills": [
 			{"hp%":20, "mp%":30, "spr%":50, "evade":{"magical":20}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Steiner": {
@@ -2324,6 +2840,9 @@
 			{"hp%":30, "atk%":20, "singleWieldingOneHanded":{"atk":50}},
 			{"hp%":10, "def%":10, "equipedConditions":["helm"]},
 			{"hp%":10, "def%":10, "equipedConditions":["heavyArmor"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Freya": {
@@ -2337,6 +2856,9 @@
 		"equip":["dagger","spear","hat","helm","clothes","lightArmor","heavyArmor","robe"],
 		"skills": [
 			{"atk%":10, "def%":10, "killers":[{"name":"dragon","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Eiko": {
@@ -2350,6 +2872,9 @@
 		"equip":["dagger","staff","rod","harp","hat","clothes","robe"],
 		"skills": [
 			{"hp%":20, "mp%":30, "spr%":80}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Amarant": {
@@ -2363,6 +2888,9 @@
 		"equip":["throwing","fist","hat","clothes"],
 		"skills": [
 			{"hp%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Lani": {
@@ -2375,6 +2903,9 @@
 		},
 		"equip":["dagger","sword","axe","lightShield","hat","clothes","lightArmor","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Kuja": {
@@ -2388,6 +2919,9 @@
 		"equip":["dagger","staff","rod","mace","hat","clothes","robe"],
 		"skills": [
 			{"hp%":20, "mp%":50, "mag%":50}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Beatrix": {
@@ -2403,6 +2937,9 @@
 			{"hp%":30, "atk%":20, "spr%":30},
 			{"atk%":40, "mag%":40, "equipedConditions":["sword"]},
 			{"atk%":40, "mag%":40, "equipedConditions":["greatSword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Black Waltz 3": {
@@ -2416,6 +2953,9 @@
 		"equip":["dagger","staff","rod","hat","clothes","robe"],
 		"skills": [
 			{"hp%":10, "atk%":10, "mag%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Tidus": {
@@ -2429,6 +2969,9 @@
 		"equip":["dagger","sword","greatSword","katana","throwing","lightShield","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":30, "mp%":20, "atk%":50, "evade":{"physical":30}, "killers":[{"name":"beast","physical":50},{"name":"bird","physical":50},{"name":"demon","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Yuna": {
@@ -2442,6 +2985,9 @@
 		"equip":["staff","rod","harp","lightShield","hat","clothes","robe"],
 		"skills": [
 			{"mp%":30, "mag%":30, "spr%":30, "killers":[{"name":"undead","magical":100}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Wakka": {
@@ -2455,6 +3001,9 @@
 		"equip":["dagger","bow","throwing","hat","helm","clothes","lightArmor"],
 		"skills": [
 			{"hp%":30, "atk%":30, "killers":[{"name":"bird","physical":125,"magical":75}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Lulu": {
@@ -2469,6 +3018,9 @@
 		"skills": [
 			{"mp%":30, "mag%":30},
 			{"mag%":40, "equipedConditions":["rod"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Rikku": {
@@ -2482,6 +3034,9 @@
 		"equip":["dagger","throwing","fist","lightShield","hat","clothes","lightArmor"],
 		"skills": [
 			{"hp%":20, "mp%":10, "atk%":20, "evade":{"physical":20}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Seymour": {
@@ -2495,6 +3050,9 @@
 		"equip":["dagger","staff","rod","lightShield","hat","clothes","robe"],
 		"skills": [
 			{"hp%":10, "mp%":10, "mag%":50}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Shantotto": {
@@ -2507,6 +3065,9 @@
 		},
 		"equip":["staff","rod","mace","hat","clothes","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Werei": {
@@ -2521,6 +3082,9 @@
 		"skills": [
 			{"hp%":20, "atk%":30, "singleWieldingOneHanded":{"atk":50}},
 			{"atk%":20, "equipedConditions":["greatSword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Kupipi": {
@@ -2534,6 +3098,9 @@
 		"equip":["staff","rod","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Prishe": {
@@ -2548,6 +3115,9 @@
 		"skills": [
 			{"hp%":50, "atk%":30, "spr%":20, "evade":{"physical":20}},
 			{"atk%":30, "spr%":30, "equipedConditions":["fist"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Vaan": {
@@ -2561,6 +3131,9 @@
 		"equip":["dagger","sword","greatSword","staff","rod","axe","hammer","spear","mace","fist","lightShield","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":20, "atk%":50, "def%":20, "evade":{"physical":15}, "killers":[{"name":"bird","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ashe": {
@@ -2575,6 +3148,9 @@
 		"skills": [
 			{"hp%":10, "mp%":20, "mag%":30},
 			{"atk%":50, "mag%":50, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Penelo": {
@@ -2589,6 +3165,9 @@
 		"skills": [
 			{"mp%":20, "atk%":10, "mag%":30},
 			{"atk%":30, "mag%":30, "equipedConditions":["dagger"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Balthier": {
@@ -2603,6 +3182,9 @@
 		"skills": [
 			{"hp%":20, "atk%":30, "def%":20, "evade":{"physical":15,"magical":15}},
 			{"atk%":50, "equipedConditions":["gun"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Fran": {
@@ -2615,6 +3197,9 @@
 		},
 		"equip":["bow","gun","lightShield","hat","clothes","lightArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Anastasis": {
@@ -2628,6 +3213,9 @@
 		"equip":["staff","mace","hat","clothes","robe"],
 		"skills": [
 			{"spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Rasler": {
@@ -2643,6 +3231,9 @@
 			{"hp%":20, "def%":20, "spr%":20},
 			{"def%":50, "equipedConditions":["heavyArmor"]},
 			{"atk%":50, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Lightning": {
@@ -2656,6 +3247,9 @@
 		"equip":["dagger","sword","greatSword","katana","bow","spear","gun","lightShield","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":20, "atk%":30, "evade":{"physical":30,"magical":20}, "special":["dualWield"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Snow": {
@@ -2670,6 +3264,9 @@
 		"skills": [
 			{"hp%":30, "def%":20},
 			{"atk%":50, "equipedConditions":["unarmed"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Vanille": {
@@ -2683,6 +3280,9 @@
 		"equip":["staff","rod","harp","whip","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Sazh": {
@@ -2697,6 +3297,9 @@
 		"skills": [
 			{"hp%":20},
 			{"atk%":20, "equipedConditions":["gun"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Hope": {
@@ -2710,6 +3313,9 @@
 		"equip":["dagger","staff","rod","throwing","lightShield","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"mp%":20, "def%":20, "mag%":60}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Fang": {
@@ -2724,6 +3330,9 @@
 		"skills": [
 			{"hp%":10, "atk%":35, "def%":15, "killers":[{"name":"beast","physical":50}]},
 			{"atk%":20, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Y'shtola": {
@@ -2736,6 +3345,9 @@
 		},
 		"equip":["staff","rod","hammer","lightShield","hat","clothes","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Thancred": {
@@ -2749,6 +3361,9 @@
 		"equip":["dagger","sword","greatSword","katana","harp","throwing","lightShield","heavyShield","hat","helm","clothes","lightArmor"],
 		"skills": [
 			{"evade":{"physical":20}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Minfilia": {
@@ -2762,6 +3377,9 @@
 		"equip":["dagger","sword","staff","whip","hat","clothes","robe"],
 		"skills": [
 			{"hp%":10, "mp%":10, "atk%":10, "def%":10, "mag%":10, "spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Yda": {
@@ -2775,6 +3393,9 @@
 		"equip":["fist","hat","clothes","lightArmor"],
 		"skills": [
 			{"atk%":30, "def%":20, "evade":{"physical":20,"magical":10}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Papalymo": {
@@ -2788,6 +3409,9 @@
 		"equip":["dagger","rod","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "mag%":30}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Noctis": {
@@ -2810,6 +3434,9 @@
 			{"def%":20, "mag%":20, "equipedConditions":["gun"]},
 			{"atk%":20, "mag%":20, "equipedConditions":["katana"]},
 			{"atk%":20, "spr%":20, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Gladiolus": {
@@ -2826,6 +3453,9 @@
 			{"hp%":30, "def%":30, "spr%":30, "equipedConditions":["lightShield"]},
 			{"hp%":30, "def%":30, "spr%":30, "equipedConditions":["heavyShield"]},
 			{"atk%":50, "equipedConditions":["greatSword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Cor": {
@@ -2840,6 +3470,9 @@
 		"skills": [
 			{"hp%":20, "spr%":10, "singleWieldingOneHanded":{"atk":80}},
 			{"atk%":80, "equipedConditions":["katana"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Iris": {
@@ -2853,6 +3486,9 @@
 		"equip":["dagger","staff","fist","lightShield","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"hp%":30, "mp%":10, "def%":10, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Aranea": {
@@ -2867,6 +3503,9 @@
 		"skills": [
 			{"hp%":30, "def%":30, "evade":{"magical":20}, "singleWielding":{"atk":100}, "killers":[{"name":"demon","physical":75},{"name":"machine","physical":75},{"name":"undead","physical":75}]},
 			{"atk%":50, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Prompto": {
@@ -2881,6 +3520,9 @@
 		"skills": [
 			{"mp%":10, "spr%":20, "evade":{"physical":20}},
 			{"atk%":50, "equipedConditions":["gun"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Nyx": {
@@ -2895,6 +3537,9 @@
 		"skills": [
 			{"hp%":20, "atk%":20, "mag%":20, "evade":{"physical":30}, "special":["dualWield"]},
 			{"atk%":50, "equipedConditions":["dagger"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Glauca": {
@@ -2909,6 +3554,9 @@
 		"skills": [
 			{"hp%":40, "killers":[{"name":"machine","physical":50},{"name":"human","physical":50}]},
 			{"atk%":50, "equipedConditions":["greatSword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Crowe": {
@@ -2922,6 +3570,9 @@
 		"equip":["dagger","staff","rod","lightShield","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"mp%":20, "mag%":20, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Libertus": {
@@ -2935,6 +3586,9 @@
 		"equip":["dagger","sword","throwing","lightShield","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":20, "def%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ramza": {
@@ -2948,6 +3602,9 @@
 		"equip":["dagger","sword","greatSword","katana","axe","hammer","harp","lightShield","heavyShield","hat","helm","clothes","lightArmor","heavyArmor","robe"],
 		"skills": [
 			{"hp%":20, "atk%":20, "def%":20, "mag%":30, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Mercenary Ramza": {
@@ -2965,6 +3622,9 @@
 			{"def%":50, "equipedConditions":["helm"]},
 			{"atk%":50, "equipedConditions":["hat"]},
 			{"def%":15, "spr%":15, "equipedConditions":["lightShield"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Delita": {
@@ -2978,6 +3638,9 @@
 		"equip":["dagger","sword","greatSword","katana","axe","hammer","spear","mace","lightShield","heavyShield","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":30, "atk%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Knight Delita": {
@@ -2993,6 +3656,9 @@
 			{"hp%":30, "atk%":30, "def%":20},
 			{"atk%":30, "equipedConditions":["sword"]},
 			{"atk%":20, "equipedConditions":["heavyArmor"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Agrias": {
@@ -3008,6 +3674,9 @@
 			{"hp%":30, "atk%":20, "def%":10},
 			{"def%":30, "spr%":30, "equipedConditions":["lightShield"]},
 			{"atk%":50, "equipedConditions":["greatSword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Alma": {
@@ -3021,6 +3690,9 @@
 		"equip":["clothes","robe"],
 		"skills": [
 			{"mp%":20, "mag%":10, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Gaffgarion": {
@@ -3034,6 +3706,9 @@
 		"equip":["dagger","sword","hammer","spear","helm","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":20, "atk%":70, "killers":[{"name":"human","physical":75}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Mustadio": {
@@ -3047,6 +3722,9 @@
 		"equip":["dagger","bow","throwing","gun","hat","clothes"],
 		"skills": [
 			{"atk%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Orlandeau": {
@@ -3061,6 +3739,9 @@
 		"skills": [
 			{"hp%":30, "atk%":30},
 			{"atk%":40, "equipedConditions":["greatSword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Meliadoul": {
@@ -3074,6 +3755,9 @@
 		"equip":["sword","greatSword","katana","bow","spear","fist","lightShield","heavyShield","hat","helm","clothes","lightArmor","heavyArmor","robe"],
 		"skills": [
 			{"hp%":20, "mp%":20, "atk%":10, "def%":20, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ovelia": {
@@ -3087,6 +3771,9 @@
 		"equip":["staff","hat","clothes","robe"],
 		"skills": [
 			{"mp%":30, "spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Orran": {
@@ -3100,6 +3787,9 @@
 		"equip":["dagger","staff","rod","harp","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"mp%":20, "mag%":20, "spr%":40}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ace": {
@@ -3113,6 +3803,9 @@
 		"equip":["dagger","rod","throwing","hat","clothes","robe"],
 		"skills": [
 			{"mp%":10, "mag%":70, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Queen": {
@@ -3126,6 +3819,9 @@
 		"equip":["dagger","sword","greatSword","hat","clothes"],
 		"skills": [
 			{"hp%":20, "atk%":50, "def%":20, "mag%":20, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Nine": {
@@ -3140,6 +3836,9 @@
 		"skills": [
 			{"hp%":20, "atk%":40, "def%":10, "spr%":20, "killers":[{"name":"demon","physical":50}]},
 			{"atk%":30, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Trey": {
@@ -3153,6 +3852,9 @@
 		"equip":["bow","hat","clothes"],
 		"skills": [
 			{"atk%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Cinque": {
@@ -3166,6 +3868,9 @@
 		"equip":["hammer","mace","hat","clothes"],
 		"skills": [
 			{"hp%":10, "atk%":20, "def%":10, "killers":[{"name":"stone","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Jack": {
@@ -3180,6 +3885,9 @@
 		"skills": [
 			{"hp%":10, "atk%":20},
 			{"atk%":20, "equipedConditions":["katana"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Seven": {
@@ -3193,6 +3901,9 @@
 		"equip":["dagger","sword","whip","hat","clothes"],
 		"skills": [
 			{"hp%":20, "atk%":10, "def%":20, "mag%":30, "spr%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Rem": {
@@ -3207,6 +3918,9 @@
 		"skills": [
 			{"mp%":30, "mag%":20, "spr%":30, "partialDualWield":["dagger"]},
 			{"mag%":50, "spr%":50, "equipedConditions":["dagger"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Eight": {
@@ -3221,6 +3935,9 @@
 		"skills": [
 			{"hp%":10, "atk%":10, "def%":10},
 			{"atk%":30, "equipedConditions":["fist"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"King": {
@@ -3234,6 +3951,9 @@
 		"equip":["dagger","throwing","gun","hat","clothes"],
 		"skills": [
 			{"hp%":20, "atk%":70, "def%":20, "partialDualWield":["gun"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Sice": {
@@ -3247,6 +3967,9 @@
 		"equip":["dagger","axe","spear","hat","clothes"],
 		"skills": [
 			{"hp%":10, "atk%":10, "mag%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Juggler": {
@@ -3259,6 +3982,9 @@
 		},
 		"equip":["dagger","throwing","hat","clothes","lightArmor","robe"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Thief": {
@@ -3271,6 +3997,9 @@
 		},
 		"equip":["dagger","sword","throwing","hat","clothes","lightArmor"],
 		"skills": [
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Fencer": {
@@ -3285,6 +4014,9 @@
 		"skills": [
 			{"atk%":20},
 			{"atk%":30, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Tilith": {
@@ -3298,6 +4030,9 @@
 		"equip":["hat","clothes","robe"],
 		"skills": [
 			{"hp%":10, "mp%":20, "mag%":10, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Karl": {
@@ -3311,6 +4046,9 @@
 		"equip":["dagger","sword","axe","spear","helm","lightArmor","heavyArmor"],
 		"skills": [
 			{"atk%":20, "def%":10, "killers":[{"name":"demon","physical":50},{"name":"beast","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Seria": {
@@ -3324,6 +4062,9 @@
 		"equip":["dagger","sword","greatSword","katana","hat","lightArmor","heavyArmor"],
 		"skills": [
 			{"atk%":10, "def%":10, "killers":[{"name":"demon","physical":50},{"name":"bird","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Vargas": {
@@ -3338,6 +4079,9 @@
 		"skills": [
 			{"hp%":20, "mp%":20, "atk%":20},
 			{"atk%":50, "equipedConditions":["greatSword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Maxwell": {
@@ -3351,6 +4095,9 @@
 		"equip":["spear","hat","clothes","lightArmor"],
 		"skills": [
 			{"hp%":30, "atk%":30, "killers":[{"name":"human","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Elza": {
@@ -3365,6 +4112,9 @@
 		"skills": [
 			{"hp%":20, "atk%":20, "killers":[{"name":"human","physical":50},{"name":"demon","physical":50}]},
 			{"atk%":100, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"White Knight Noel": {
@@ -3384,6 +4134,9 @@
 			{"def%":30, "equipedConditions":["lightArmor"]},
 			{"def%":30, "equipedConditions":["heavyArmor"]},
 			{"mag%":30, "equipedConditions":["robe"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Santa Roselia": {
@@ -3397,6 +4150,9 @@
 		"equip":["staff","harp","mace","lightShield","hat","clothes","robe"],
 		"skills": [
 			{"hp%":20, "spr%":50}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Yun": {
@@ -3412,6 +4168,9 @@
 			{"hp%":30, "atk%":30, "def%":30, "killers":[{"name":"beast","physical":50}]},
 			{"atk%":50, "equipedConditions":["clothes"]},
 			{"atk%":50, "equipedConditions":["lightArmor"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Ling": {
@@ -3425,6 +4184,9 @@
 		"equip":["dagger","hat","clothes","robe"],
 		"skills": [
 			{"mp%":20, "evade":{"physical":40}, "killers":[{"name":"human","physical":75,"magical":75}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Cupid Artemios": {
@@ -3441,6 +4203,9 @@
 			{"atk%":75, "equipedConditions":["bow"]},
 			{"atk%":30, "equipedConditions":["throwing"]},
 			{"atk%":30, "equipedConditions":["dagger"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Cupid Luna": {
@@ -3454,6 +4219,9 @@
 		"equip":["bow","gun","hat","clothes"],
 		"skills": [
 			{"hp%":20, "atk%":80, "mag%":70, "killers":[{"name":"spirit","physical":50},{"name":"human","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Olive": {
@@ -3468,6 +4236,9 @@
 		"skills": [
 			{"hp%":20, "atk%":30, "spr%":20, "singleWieldingOneHanded":{"atk":75}, "killers":[{"name":"machine","physical":50}]},
 			{"atk%":50, "equipedConditions":["gun"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Fryevia": {
@@ -3482,6 +4253,9 @@
 		"skills": [
 			{"mp%":30, "mag%":30, "evade":{"physical":20,"magical":20}, "singleWieldingOneHanded":{"atk":100,"mag":50}},
 			{"atk%":30, "mag%":30, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Xon": {
@@ -3495,6 +4269,9 @@
 		"equip":["dagger","sword","throwing","fist","hat","clothes"],
 		"skills": [
 			{"hp%":20, "atk%":10, "evade":{"physical":20}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Aiden": {
@@ -3508,6 +4285,9 @@
 		"equip":["dagger","staff","rod","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"hp%":20, "def%":40, "spr%":40}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Randi": {
@@ -3522,6 +4302,9 @@
 		"skills": [
 			{"hp%":20, "atk%":60, "def%":20, "evade":{"physical":15}, "singleWieldingOneHanded":{"atk":100,"def":50,"spr":50}, "killers":[{"name":"spirit","physical":125},{"name":"beast","physical":125},{"name":"undead","physical":125},{"name":"dragon","physical":125}]},
 			{"atk%":70, "def%":35, "spr%":35, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Primm": {
@@ -3535,6 +4318,9 @@
 		"equip":["sword","katana","staff","rod","bow","axe","hammer","spear","whip","throwing","fist","lightShield","hat","helm","clothes","lightArmor","robe"],
 		"skills": [
 			{"atk%":100, "mag%":100, "spr%":100}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Popoi": {
@@ -3548,6 +4334,9 @@
 		"equip":["sword","katana","staff","rod","bow","axe","hammer","spear","whip","throwing","fist","lightShield","hat","helm","clothes","lightArmor","robe"],
 		"skills": [
 			{"hp%":20, "mp%":30, "mag%":50}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"2B": {
@@ -3561,6 +4350,9 @@
 		"equip":["sword","greatSword","katana","axe","hammer","spear","throwing","fist","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":40, "atk%":80, "evade":{"physical":20,"magical":10}, "killers":[{"name":"machine","physical":100}], "special":["dualWield"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"9S": {
@@ -3574,6 +4366,9 @@
 		"equip":["sword","greatSword","katana","axe","hammer","spear","throwing","fist","lightShield","hat","helm","clothes","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":20, "atk%":30, "evade":{"physical":20}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Adam": {
@@ -3587,6 +4382,9 @@
 		"equip":["throwing","fist","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"hp%":30, "def%":10, "spr%":10, "killers":[{"name":"machine","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"21O": {
@@ -3600,6 +4398,9 @@
 		"equip":["sword","katana","spear","throwing","fist","hat","clothes","lightArmor"],
 		"skills": [
 			{"hp%":10, "mp%":10, "def%":20, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Dangerous Ariana": {
@@ -3613,6 +4414,9 @@
 		"equip":["staff","rod","harp","lightShield","hat","clothes","robe"],
 		"skills": [
 			{"mp%":10, "def%":10, "mag%":10}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Demon Rain": {
@@ -3626,6 +4430,9 @@
 		"equip":["sword","greatSword","hammer","mace","lightShield","heavyShield","helm","lightArmor","heavyArmor"],
 		"skills": [
 			{"hp%":40, "singleWielding":{"atk":150}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Dracu Lasswell": {
@@ -3640,6 +4447,9 @@
 		"skills": [
 			{"atk%":30, "evade":{"physical":20,"magical":10}},
 			{"hp%":30, "atk%":60, "equipedConditions":["katana"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"White Witch Fina": {
@@ -3653,6 +4463,9 @@
 		"equip":["staff","bow","mace","hat","clothes","robe"],
 		"skills": [
 			{"mp%":50, "spr%":60, "singleWielding":{"spr":100}}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Black Cat Lid": {
@@ -3667,6 +4480,9 @@
 		"skills": [
 			{"hp%":70, "atk%":20, "def%":50, "spr%":10, "evade":{"physical":10}, "killers":[{"name":"undead","physical":125},{"name":"machine","physical":125},{"name":"demon","physical":75}]},
 			{"atk%":100, "equipedConditions":["hammer"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Artisan Lid": {
@@ -3680,6 +4496,9 @@
 		"equip":["staff","rod","bow","axe","hammer","gun","mace","hat","clothes","lightArmor"],
 		"skills": [
 			{"mp%":20, "spr%":20}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Swordsman Lasswell": {
@@ -3696,6 +4515,9 @@
 			{"atk%":20, "mag%":20, "equipedConditions":["sword"]},
 			{"atk%":20, "mag%":20, "equipedConditions":["greatSword"]},
 			{"atk%":20, "mag%":20, "equipedConditions":["katana"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Cheerleader Fina": {
@@ -3710,6 +4532,9 @@
 		"skills": [
 			{"mp%":20, "spr%":20},
 			{"spr%":20, "equipedConditions":["bow"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Zargabaath": {
@@ -3733,6 +4558,9 @@
 			{"mag%":30, "equipedConditions":["spear"]},
 			{"hp%":20, "atk%":20, "equipedConditions":["light"]},
 			{"mp%":20, "mag%":20, "equipedConditions":["fire"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"A2": {
@@ -3750,6 +4578,9 @@
 			{"atk%":50, "equipedConditions":["greatSword"]},
 			{"atk%":30, "spr%":20, "equipedConditions":["spear"]},
 			{"hp%":30, "atk%":30, "equipedConditions":["fist"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Eve": {
@@ -3763,6 +4594,9 @@
 		"equip":["throwing","fist","hat","clothes","lightArmor","robe"],
 		"skills": [
 			{"hp%":30, "atk%":40, "def%":10, "killers":[{"name":"machine","physical":50}]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Reberta": {
@@ -3777,6 +4611,9 @@
 		"skills": [
 			{"hp%":20, "atk%":30, "def%":20, "killers":[{"name":"dragon","physical":100}]},
 			{"atk%":50, "equipedConditions":["spear"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Zyrus": {
@@ -3792,6 +4629,9 @@
 			{"mp%":20, "mag%":10, "killers":[{"name":"dragon","physical":25,"magical":50}]},
 			{"mag%":20, "equipedConditions":["rod"]},
 			{"mag%":30, "equipedConditions":["robe"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Grim Lord Sakura": {
@@ -3807,6 +4647,9 @@
 			{"mp%":20, "mag%":30, "spr%":20, "singleWielding":{"hp":50,"mag":100,"spr":100}, "killers":[{"name":"human","magical":50},{"name":"demon","magical":50},{"name":"undead","magical":50}]},
 			{"mag%":30, "equipedConditions":["fire"]},
 			{"hp%":30, "equipedConditions":["dark"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Illusionist Nichol": {
@@ -3822,6 +4665,9 @@
 			{"mp%":30, "mag%":30},
 			{"mag%":30, "equipedConditions":["hat"]},
 			{"spr%":30, "equipedConditions":["clothes"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Pirate Jake": {
@@ -3837,6 +4683,9 @@
 			{"hp%":20, "atk%":30, "spr%":20, "partialDualWield":["sword","gun"]},
 			{"atk%":30, "equipedConditions":["gun"]},
 			{"hp%":30, "equipedConditions":["sword"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	},
 	"Chic Ariana": {
@@ -3851,6 +4700,9 @@
 		"skills": [
 			{"hp%":10, "spr%":20},
 			{"mag%":30, "equipedConditions":["hammer"]}
+		],
+		"atkSkills": [
+			{"target":"ST", "attack_count":1, "multiplier":100, "ignoreDef":-50}
 		]
 	}
 }
