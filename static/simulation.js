@@ -1261,7 +1261,7 @@ function updateUnitStats() {
 
 function populateUnitSkills() {
     var currentUnit = builds[currentUnitIndex].selectedUnit;
-    var options = '<option value="Normal Attack">Normal Attack</option>';
+    var options = '<option value="">Normal Attack</option>';
     var atkSkills = [];
     for (var atkSkill in currentUnit.atkSkills) {
         atkSkills.push(currentUnit.atkSkills[atkSkill].name);
@@ -1868,7 +1868,33 @@ function populateItemStat() {
 }
 
 function unitAttack(unitIndex) {
-    var damage = physicalAttack("unit" + unitIndex + "Current_", "monsterCurrent_", 2.1, 50);
+    var atkSkillName = $("#unit" + unitIndex + "AtkSkillSelect option:selected").val();
+
+    if (atkSkillName == "") {
+        damage = physicalAttack("unit" + unitIndex + "Current_", "monsterCurrent_", 100, 0);
+    } else {
+        var selectedSkill = null;
+        builds[currentUnitIndex].selectedUnit.atkSkills.forEach(function (atkSkill) {
+            if (atkSkill.name == atkSkillName) {
+                selectedSkill = atkSkill;
+            }
+        });
+
+        var damage = 0;
+        switch (selectedSkill.atkType.toLowerCase()) {
+            case "physical":
+                damage = physicalAttack("unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, selectedSkill.ignoreDef);
+            break;
+            case "magic":
+                damage = magicAttack("unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, selectedSkill.ignoreSpr);
+            break;
+            case "hybrid":
+                damage = physicalAttack("unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, 50);
+            break;
+            default:
+                return;
+        }
+    }
 
     $("#unit" + unitIndex + "Atk .damageResult").html(damage);
     $("#unit" + unitIndex + "Atk .damage").removeClass("hidden");
@@ -1889,16 +1915,36 @@ function physicalAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef) {
     var atk = $("#" + atkUnitPrefix + "atk").val();
     var def = $("#" + defUnitPrefix + "def").val();
 
+    var ignoreDefValue = 0;
+    if (ignoreDef) {
+        ignoreDefValue = ignoreDef;
+    }
+
     var damage = 0;
     if (builds[currentUnitIndex].bestBuild[0] && builds[currentUnitIndex].bestBuild[1]) {
         var leftAtk = atk - builds[currentUnitIndex].bestBuild[0]["atk"];
         var rightAtk = atk - builds[currentUnitIndex].bestBuild[1]["atk"];
 
-        damage = leftAtk * leftAtk / (def * (100 - ignoreDef) / 100) * multiplier; /* * killer * elemetal_weakness / elemental_resistence */
-        damage += rightAtk * rightAtk / (def * (100 - ignoreDef) / 100) * multiplier; /* * killer * elemetal_weakness / elemental_resistence */
+        damage = leftAtk * leftAtk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100; /* * killer * elemetal_weakness / elemental_resistence */
+        damage += rightAtk * rightAtk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100; /* * killer * elemetal_weakness / elemental_resistence */
     } else {
-        damage = atk * atk / (def * (100 - ignoreDef) / 100) * multiplier; /* * killer * elemetal_weakness / elemental_resistence */
+        damage = atk * atk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100; /* * killer * elemetal_weakness / elemental_resistence */
     }
+
+    return Math.floor(damage);
+}
+
+function magicAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr) {
+    var mag = $("#" + atkUnitPrefix + "mag").val();
+    var spr = $("#" + defUnitPrefix + "spr").val();
+
+    var ignoreSprValue = 0;
+    if (ignoreSpr) {
+        ignoreSprValue = ignoreSpr;
+    }
+
+    var damage = 0;
+    damage = mag * mag / (spr * (100 - ignoreSprValue) / 100) * multiplier / 100; /* * killer * elemetal_weakness / elemental_resistence */
 
     return Math.floor(damage);
 }
