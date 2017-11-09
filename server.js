@@ -9,7 +9,7 @@ var app = express();
 let driveConfig = require('drive-config');
 var inventoryFile = null;
 
-require('./tools/parseUnits.js');
+//require('./tools/parseUnits.js');
 
 if (process.argv.length > 2) {
     inventoryFile = process.argv[2];
