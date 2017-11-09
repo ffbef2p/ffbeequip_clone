@@ -1261,7 +1261,15 @@ function updateUnitStats() {
 
 function populateUnitSkills() {
     var currentUnit = builds[currentUnitIndex].selectedUnit;
-    
+    var options = '<option value="Normal Attack">Normal Attack</option>';
+    var atkSkills = [];
+    for (var atkSkill in currentUnit.atkSkills) {
+        atkSkills.push(currentUnit.atkSkills[atkSkill].name);
+    }
+    atkSkills.sort().forEach(function(value, index) {
+        options += '<option value="'+ value + '">' + value + '</option>';
+    });
+    $("#unit" + (currentUnitIndex + 1) + "AtkSkillSelect").html(options);
 }
 
 function reinitBuild(buildIndex) {
@@ -1881,6 +1889,16 @@ function physicalAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef) {
     var atk = $("#" + atkUnitPrefix + "atk").val();
     var def = $("#" + defUnitPrefix + "def").val();
 
-    var damage = atk * atk / (def * (100 - ignoreDef) / 100) * multiplier; /* * killer * elemetal_weakness / elemental_resistence */
+    var damage = 0;
+    if (builds[currentUnitIndex].bestBuild[0] && builds[currentUnitIndex].bestBuild[1]) {
+        var leftAtk = atk - builds[currentUnitIndex].bestBuild[0]["atk"];
+        var rightAtk = atk - builds[currentUnitIndex].bestBuild[1]["atk"];
+
+        damage = leftAtk * leftAtk / (def * (100 - ignoreDef) / 100) * multiplier; /* * killer * elemetal_weakness / elemental_resistence */
+        damage += rightAtk * rightAtk / (def * (100 - ignoreDef) / 100) * multiplier; /* * killer * elemetal_weakness / elemental_resistence */
+    } else {
+        damage = atk * atk / (def * (100 - ignoreDef) / 100) * multiplier; /* * killer * elemetal_weakness / elemental_resistence */
+    }
+
     return Math.floor(damage);
 }
