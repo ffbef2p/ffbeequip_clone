@@ -3219,11 +3219,11 @@
 			{"hp%":50, "mp%":50, "atk%":30, "def%":30, "mag%":30, "spr%":30, "singleWielding":{"atk":100}}
 		],
 		"atkSkills": [
-			{"name":"Braver", "target":"ST", "atkType":"Physical", "atkCount":1, "atkFrames":"6", "effectFrames":"4"},
-			{"name":"Cross-slash", "target":"ST", "atkType":"Physical", "atkCount":1, "multiplier":300, "atkFrames":"4,30,60,90,120", "effectFrames":"4,4"},
+			{"name":"Brave Slash", "target":"ST", "atkType":"Physical", "atkCount":1, "atkFrames":"6", "effectFrames":"4"},
+			{"name":"Cross Slash", "target":"ST", "atkType":"Physical", "atkCount":1, "multiplier":300, "atkFrames":"4,30,60,90,120", "effectFrames":"4,4"},
 			{"name":"Blade Beam", "target":"MT", "atkType":"Physical", "atkCount":1, "atkFrames":"4,8", "effectFrames":"0,4"},
 			{"name":"Climhazzard", "target":"ST", "atkType":"Physical", "atkCount":1, "multiplier":275, "ignoreDef":50, "atkFrames":"4", "effectFrames":"0,20,20,0"},
-			{"name":"Meteorain", "target":"MT", "atkType":"Physical", "atkCount":1, "multiplier":180, "ignoreDef":50, "atkFrames":"84,92,100,108,116,124,132,140", "effectFrames":"4"},
+			{"name":"Meteor Rain", "target":"MT", "atkType":"Physical", "atkCount":1, "multiplier":180, "ignoreDef":50, "atkFrames":"84,92,100,108,116,124,132,140", "effectFrames":"4"},
 			{"name":"Finishing Touch", "target":"MT", "atkType":"Physical", "atkCount":1, "atkFrames":"75", "effectFrames":"0,15"}
 		]
 	},
@@ -5360,6 +5360,65 @@
 			{"name":"Pillar of Light", "target":"ST", "atkType":"Physical", "atkCount":1, "atkFrames":"100,150", "effectFrames":"1,60,105,1"}
 		]
 	},
+	"Barbariccia": {
+		"id":"401001406",
+		"max_rarity":"6",
+		"sex":"female",
+		"stats": {
+			"maxStats":{"hp":3450,"mp":190,"atk":110,"def":118,"mag":156,"spr":140},
+			"pots":{"hp":390,"mp":65,"atk":26,"def":26,"mag":34,"spr":26}
+		},
+		"equip":["staff","rod","whip","mace","lightShield","hat","clothes","robe"],
+		"skills": [
+			{"hp%":20, "mp%":30, "mag%":50},
+			{"mag%":30, "equipedConditions":["rod"]},
+			{"spr%":30, "equipedConditions":["lightShield"]}
+		],
+		"atkSkills": [
+			{"name":"Aerora", "target":"MT", "atkType":"Magic", "elemental":"Wind", "atkCount":1, "multiplier":140, "atkFrames":"100", "effectFrames":"40"},
+			{"name":"Aeroga", "target":"MT", "atkType":"Magic", "elemental":"Wind", "atkCount":1, "multiplier":180, "atkFrames":"110", "effectFrames":"40"},
+			{"name":"Flurry", "target":"ST", "atkType":"Physical", "elemental":"Wind", "atkCount":1, "multiplier":300, "atkFrames":"20,24,29,35", "effectFrames":"18,22,27,33,20"},
+			{"name":"Tornado", "target":"MT", "atkType":"Magic", "elemental":"Wind", "atkCount":1, "multiplier":250, "lowerResistwind":"-50", "atkFrames":"212,200,188,176,164,152,140,128,116,104,92,80", "effectFrames":"40,40"},
+			{"name":"Aeroja", "target":"MT", "atkType":"Magic", "elemental":"Wind", "atkCount":1, "multiplier":200, "chargeIncremental":100, "chargeMax":5, "atkFrames":"170", "effectFrames":"40"}
+		]
+	},
+	"Rubicante": {
+		"id":"401001506",
+		"max_rarity":"6",
+		"sex":"male",
+		"stats": {
+			"maxStats":{"hp":3420,"mp":170,"atk":110,"def":125,"mag":150,"spr":130},
+			"pots":{"hp":390,"mp":65,"atk":26,"def":26,"mag":34,"spr":26}
+		},
+		"equip":["staff","rod","hat","clothes","robe"],
+		"skills": [
+			{"hp%":20, "mp%":20, "mag%":30}
+		],
+		"atkSkills": [
+			{"name":"Fira", "target":"MT", "atkType":"Magic", "elemental":"Fire", "atkCount":1, "multiplier":140, "atkFrames":"95", "effectFrames":"40"},
+			{"name":"Firaga", "target":"MT", "atkType":"Magic", "elemental":"Fire", "atkCount":1, "multiplier":180, "atkFrames":"150", "effectFrames":"40"},
+			{"name":"Blizzaga", "target":"MT", "atkType":"Magic", "elemental":"Ice", "atkCount":1, "multiplier":180, "atkFrames":"150", "effectFrames":"40"},
+			{"name":"Flare", "target":"ST", "atkType":"Magic", "elemental":"Fire", "atkCount":1, "multiplier":230, "lowerResistwater":"-30", "atkFrames":"240", "effectFrames":"40,40"},
+			{"name":"Firaja", "target":"MT", "atkType":"Magic", "elemental":"Fire", "atkCount":1, "multiplier":200, "chargeIncremental":100, "chargeMax":5, "atkFrames":"210", "effectFrames":"40"}
+		]
+	},
+	"Cagnazzo": {
+		"id":"401001606",
+		"max_rarity":"6",
+		"sex":"male",
+		"stats": {
+			"maxStats":{"hp":3620,"mp":145,"atk":120,"def":143,"mag":105,"spr":117},
+			"pots":{"hp":510,"mp":65,"atk":26,"def":26,"mag":26,"spr":26}
+		},
+		"equip":["fist","helm","lightArmor","heavyArmor"],
+		"skills": [
+			{"hp%":20, "def%":50, "spr%":40}
+		],
+		"atkSkills": [
+			{"name":"Piercing Claw", "target":"ST", "atkType":"Physical", "atkCount":1, "atkFrames":"50,55,60", "effectFrames":"50,55,60"},
+			{"name":"Hydro Wave", "target":"MT", "atkType":"Physical", "elemental":"Water", "atkCount":1, "atkFrames":"110", "effectFrames":"40"}
+		]
+	},
 	"Reberta": {
 		"id":"401001706",
 		"max_rarity":"6",
@@ -5401,6 +5460,30 @@
 			{"name":"Waterga", "target":"MT", "atkType":"Magic", "elemental":"Water", "atkCount":1, "multiplier":180, "atkFrames":"110", "effectFrames":"40"},
 			{"name":"Flare", "target":"ST", "atkType":"Magic", "elemental":"Fire", "atkCount":1, "multiplier":230, "lowerResistwater":"-30", "atkFrames":"240", "effectFrames":"40,40"},
 			{"name":"Blood Pulsar", "target":"ST", "atkType":"Magic", "atkCount":1, "multiplier":350, "chargeIncremental":100, "chargeMax":4, "atkFrames":"130", "effectFrames":"30,20"}
+		]
+	},
+	"Scarmiglione": {
+		"id":"401001905",
+		"max_rarity":"5",
+		"sex":"male",
+		"stats": {
+			"maxStats":{"hp":2629,"mp":111,"atk":111,"def":100,"mag":85,"spr":81},
+			"pots":{"hp":240,"mp":40,"atk":24,"def":16,"mag":16,"spr":16}
+		},
+		"equip":["dagger","sword","katana","throwing","fist","hat","clothes","lightArmor","robe"],
+		"skills": [
+			{"hp%":20, "atk%":40, "def%":20, "spr%":10}
+		],
+		"atkSkills": [
+			{"name":"Thunder", "target":"ST", "atkType":"Magic", "elemental":"Lightning", "atkCount":1, "multiplier":120, "atkFrames":"70", "effectFrames":"40"},
+			{"name":"Poison Claw", "target":"ST", "atkType":"Physical", "atkCount":1, "atkFrames":"45", "effectFrames":"45"},
+			{"name":"Diseased Claw", "target":"ST", "atkType":"Physical", "atkCount":1, "atkFrames":"45", "effectFrames":"45"},
+			{"name":"Blinding Strike", "target":"ST", "atkType":"Physical", "atkCount":1, "atkFrames":"45", "effectFrames":"45"},
+			{"name":"Thundara", "target":"MT", "atkType":"Magic", "elemental":"Lightning", "atkCount":1, "multiplier":140, "atkFrames":"80", "effectFrames":"40"},
+			{"name":"Back Attack", "target":"ST", "atkType":"Physical", "atkCount":1, "multiplier":210, "ignoreDef":50, "atkFrames":"45", "effectFrames":"45"},
+			{"name":"Thundaga", "target":"MT", "atkType":"Magic", "elemental":"Lightning", "atkCount":1, "multiplier":180, "atkFrames":"70", "effectFrames":"40"},
+			{"name":"Hideous Strike", "target":"ST", "atkType":"Physical", "atkCount":1, "atkFrames":"45", "effectFrames":"45"},
+			{"name":"Gas", "target":"MT", "atkType":"Physical", "atkCount":1, "atkFrames":"130", "effectFrames":"40"}
 		]
 	},
 	"Grim Lord Sakura": {
