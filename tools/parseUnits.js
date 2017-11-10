@@ -452,7 +452,11 @@ function getActiveSkills(unitId, skillsIn, skills, enhancements) {
                             appendToList(attackSkill, "multiplier", atkRawEffect[atkRawEffect.length - 2]);
                             appendToList(attackSkill, "multiplier", atkRawEffect[atkRawEffect.length - 1]);
                         } else {
-                            addToStat(attackSkill, "multiplier", atkRawEffect[atkRawEffect.length - 1]);
+                            var multiplier = atkRawEffect[atkRawEffect.length - 1];
+                            if (multiplier == 0) {
+                                multiplier = atkRawEffect[atkRawEffect.length - 2];
+                            }
+                            addToStat(attackSkill, "multiplier", multiplier);
                         }
                         doesDamage = true;
                     } else if (effectFlag == 72) {
