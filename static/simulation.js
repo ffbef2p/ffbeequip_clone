@@ -1889,7 +1889,7 @@ function unitAttack(unitIndex) {
                 damage = magicAttack("unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, selectedSkill.ignoreSpr);
             break;
             case "hybrid":
-                damage = physicalAttack("unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, 50);
+                damage = hybridAttack("unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, selectedSkill.ignoreDef, selectedSkill.ignoreSpr);
             break;
             default:
                 return;
@@ -1911,6 +1911,28 @@ function monsterAttack(unitIndex) {
     $("#monsterCurrent_mp").val($("#monsterCurrent_mp").val() - 45);
 }
 
+function singleHandAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, isLeftHand) {
+    var atk = $("#" + atkUnitPrefix + "atk").val();
+    var def = $("#" + defUnitPrefix + "def").val();
+
+    var ignoreDefValue = 0;
+    if (ignoreDef) {
+        ignoreDefValue = ignoreDef;
+    }
+
+    var levelCorrection = (1 + (99 / 100));
+    var damage = 0;
+    var weaponIndex = 0;
+    if (!isLeftHand) {
+        weaponIndex = 1;
+    }
+
+    var actualAtk = atk - builds[currentUnitIndex].bestBuild[weaponIndex]["atk"];
+    damage = actualAtk * actualAtk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100 * levelCorrection; /* * killer * elemetal_weakness / elemental_resistence */
+
+    return Math.floor(damage);
+}
+
 function physicalAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef) {
     var atk = $("#" + atkUnitPrefix + "atk").val();
     var def = $("#" + defUnitPrefix + "def").val();
@@ -1920,15 +1942,15 @@ function physicalAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef) {
         ignoreDefValue = ignoreDef;
     }
 
+    var levelCorrection = (1 + (99 / 100));
     var damage = 0;
     if (builds[currentUnitIndex].bestBuild[0] && builds[currentUnitIndex].bestBuild[1]) {
-        var leftAtk = atk - builds[currentUnitIndex].bestBuild[0]["atk"];
-        var rightAtk = atk - builds[currentUnitIndex].bestBuild[1]["atk"];
+        var leftDamage = singleHandAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, true);
+        var rightDamage = singleHandAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, false);
 
-        damage = leftAtk * leftAtk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100; /* * killer * elemetal_weakness / elemental_resistence */
-        damage += rightAtk * rightAtk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100; /* * killer * elemetal_weakness / elemental_resistence */
+        damage = leftDamage + rightDamage;
     } else {
-        damage = atk * atk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100; /* * killer * elemetal_weakness / elemental_resistence */
+        damage = atk * atk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100 * levelCorrection; /* * killer * elemetal_weakness / elemental_resistence */
     }
 
     return Math.floor(damage);
@@ -1943,8 +1965,23 @@ function magicAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr) {
         ignoreSprValue = ignoreSpr;
     }
 
+    var levelCorrection = (1 + (99 / 100));
     var damage = 0;
-    damage = mag * mag / (spr * (100 - ignoreSprValue) / 100) * multiplier / 100; /* * killer * elemetal_weakness / elemental_resistence */
+    damage = mag * mag / (spr * (100 - ignoreSprValue) / 100) * multiplier / 100 * levelCorrection; /* * killer * elemetal_weakness / elemental_resistence */
 
     return Math.floor(damage);
+}
+
+function singleHandHybridAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef, isLeftHand) {
+   var physicalDamage = singleHandAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, isLeftHand);
+   var magicDamage = magicAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef);
+
+    return Math.floor((physicalDamage + magicDamage) / 2);
+}
+
+function hybridAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef) {
+   var physicalDamage = physicalAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef);
+   var magicDamage = magicAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef);
+
+    return Math.floor((physicalDamage + magicDamage) / 2);
 }
