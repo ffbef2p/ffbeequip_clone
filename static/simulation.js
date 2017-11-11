@@ -2015,7 +2015,7 @@ function singleHandAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix
     var def = $("#" + defUnitPrefix + "def").val();
     var killerValue = 1;
     if (enemyRaces.length > 0) {
-        killerValue = (1 + ((parseInt($("#" + defUnitPrefix + "killer").val()) / 100) / enemyRaces.length));
+        killerValue = (1 + ((parseInt($("#" + atkUnitPrefix + "killer").val()) / 100) / enemyRaces.length));
     }
 
     var ignoreDefValue = 0;
@@ -2068,7 +2068,7 @@ function magicAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, mul
     var spr = $("#" + defUnitPrefix + "spr").val();
     var killerValue = 1;
     if (enemyRaces.length > 0) {
-        killerValue = (1 + ((parseInt($("#" + defUnitPrefix + "killer").val()) / 100) / enemyRaces.length));
+        killerValue = (1 + ((parseInt($("#" + atkUnitPrefix + "killer").val()) / 100) / enemyRaces.length));
     }
 
     var ignoreSprValue = 0;
