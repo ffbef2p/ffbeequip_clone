@@ -364,9 +364,17 @@ function select(type, values) {
 
 // Add text choices to a filter. Type can be 'radio' of 'checkbox', depending if you want only one selection, or allow many.
 function addTextChoicesTo(targetId, type, valueMap) {
+    var target = $("#" + targetId);
+    for (var key in valueMap) {
+        addTextChoiceTo(target, targetId, type, valueMap[key], key);
+    }
+}
+
+// Add text choices to a filter. Type can be 'radio' of 'checkbox', depending if you want only one selection, or allow many.
+function addTextAndOnClickChoicesTo(targetId, type, valueMap, onClickFunction) {
 	var target = $("#" + targetId);
 	for (var key in valueMap) {
-		addTextChoiceTo(target, targetId, type, valueMap[key], key);
+		addTextAndOnClickChoiceTo(target, targetId, type, valueMap[key], key, onClickFunction);
 	}
 }
 
@@ -380,7 +388,12 @@ function addImageChoicesTo(targetId, valueList,type="checkbox",imagePrefix = "")
 
 // Add one text choice to a filter
 function addTextChoiceTo(target, name, type, value, label) {
-	target.append('<label class="btn btn-default"><input type="' + type +'" name="' + name + '" value="'+value+'" autocomplete="off">'+label+'</label>');
+    target.append('<label class="btn btn-default"><input type="' + type +'" name="' + name + '" value="'+value+'" autocomplete="off">'+label+'</label>');
+}
+
+// Add one text choice to a filter
+function addTextAndOnClickChoiceTo(target, name, type, value, label, onClickFunction) {
+    target.append('<label class="btn btn-default"><input type="' + type +'" name="' + name + '" value="'+value+'" autocomplete="off" onchange="' + onClickFunction + '">'+label+'</label>');
 }
 
 // Add one image choice to a filter

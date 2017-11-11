@@ -1068,18 +1068,21 @@ function calculatePercentStateValueForIndex(equiped, itemAndPassives, equipedInd
 }
 
 function calculateBuildKillerValue() {
-    var equiped = builds[currentUnitIndex].bestBuild;
-    var cumulatedKiller = 0;
-    var itemAndPassives = equiped.concat(builds[currentUnitIndex].selectedUnit.skills);
-    if (builds[currentUnitIndex].bestEsper != null) {
-        itemAndPassives.push(builds[currentUnitIndex].bestEsper);
-    }
-    for (var equipedIndex in itemAndPassives) {
-        if (itemAndPassives[equipedIndex] && (areConditionOK(itemAndPassives[equipedIndex], equiped))) {
-            if (enemyRaces.length > 0 && itemAndPassives[equipedIndex].killers) {
-                for (var killerIndex = 0; killerIndex <  itemAndPassives[equipedIndex].killers.length; killerIndex++) {
-                    if (enemyRaces.includes(itemAndPassives[equipedIndex].killers[killerIndex].name) && itemAndPassives[equipedIndex].killers[killerIndex][applicableKillerType]) {
-                        cumulatedKiller += itemAndPassives[equipedIndex].killers[killerIndex][applicableKillerType];
+    if (builds && builds[currentUnitIndex] && builds[currentUnitIndex].bestBuild && builds[currentUnitIndex].selectedUnit) {
+        var equiped = builds[currentUnitIndex].bestBuild;
+        var cumulatedKiller = 0;
+        var itemAndPassives = equiped.concat(builds[currentUnitIndex].selectedUnit.skills);
+        if (builds[currentUnitIndex].bestEsper != null) {
+            itemAndPassives.push(builds[currentUnitIndex].bestEsper);
+        }
+        var currentEnemyRaces = getSelectedValuesFor("races");
+        for (var equipedIndex in itemAndPassives) {
+            if (itemAndPassives[equipedIndex] && (areConditionOK(itemAndPassives[equipedIndex], equiped))) {
+                if (currentEnemyRaces.length > 0 && itemAndPassives[equipedIndex].killers) {
+                    for (var killerIndex = 0; killerIndex <  itemAndPassives[equipedIndex].killers.length; killerIndex++) {
+                        if (currentEnemyRaces.includes(itemAndPassives[equipedIndex].killers[killerIndex].name) && itemAndPassives[equipedIndex].killers[killerIndex][applicableKillerType]) {
+                            cumulatedKiller += itemAndPassives[equipedIndex].killers[killerIndex][applicableKillerType];
+                        }
                     }
                 }
             }
@@ -1179,8 +1182,8 @@ function logBuild(build, value, esper) {
         } else {
             $("#resultStats .damage").addClass("hidden");
         }
-        var killerValue = calculateBuildKillerValue();
-        $("#unit" + (currentUnitIndex + 1) + "Current_killer").val(killerValue);
+
+        onRacesChange();
         /*if (builds[currentUnitIndex].statToMaximize == "atk" || builds[currentUnitIndex].statToMaximize == "mag") {
             $("#resultStats").html("<div>" + builds[currentUnitIndex].statToMaximize + " = " + Math.floor(value.stat) + '</div><div>damage (on 100 def) = ' + Math.floor(value.total) + "</div><div>+" + builds[currentUnitIndex].statToMaximize + "% : " + bonusPercent + "</div>");
         } else if (builds[currentUnitIndex].statToMaximize == "def" || builds[currentUnitIndex].statToMaximize == "spr" || builds[currentUnitIndex].statToMaximize == "hp") {
@@ -1444,6 +1447,11 @@ function onEquipmentsChange() {
         $(".equipments .panel-body").addClass("hidden");
         onlyUseOwnedItems = true;
     }
+}
+
+function onRacesChange() {
+    var killerValue = calculateBuildKillerValue();
+    $("#unit" + (currentUnitIndex + 1) + "Current_killer").val(killerValue);
 }
      
 function updateSearchResult() {
@@ -1864,7 +1872,7 @@ $(function() {
 	addImageChoicesTo("elements",["fire", "ice", "lightning", "water", "wind", "earth", "light", "dark"]);
 	addImageChoicesTo("monsterElements",["fire", "ice", "lightning", "water", "wind", "earth", "light", "dark"]);
     // Killers
-	addTextChoicesTo("races",'checkbox',{'Aquatic':'aquatic', 'Beast':'beast', 'Bird':'bird', 'Bug':'bug', 'Demon':'demon', 'Dragon':'dragon', 'Human':'human', 'Machine':'machine', 'Plant':'plant', 'Undead':'undead', 'Stone':'stone', 'Spirit':'spirit'});
+	addTextAndOnClickChoicesTo("races",'checkbox',{'Aquatic':'aquatic', 'Beast':'beast', 'Bird':'bird', 'Bug':'bug', 'Demon':'demon', 'Dragon':'dragon', 'Human':'human', 'Machine':'machine', 'Plant':'plant', 'Undead':'undead', 'Stone':'stone', 'Spirit':'spirit'}, "onRacesChange()");
     
     populateItemStat();
     
@@ -2014,8 +2022,9 @@ function singleHandAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix
     var atk = $("#" + atkUnitPrefix + "atk").val();
     var def = $("#" + defUnitPrefix + "def").val();
     var killerValue = 1;
-    if (enemyRaces.length > 0) {
-        killerValue = (1 + ((parseInt($("#" + atkUnitPrefix + "killer").val()) / 100) / enemyRaces.length));
+    var currentEnemyRace = getSelectedValuesFor("races");
+    if (currentEnemyRace.length > 0) {
+        killerValue = (1 + ((parseInt($("#" + atkUnitPrefix + "killer").val()) / 100) / currentEnemyRace.length));
     }
 
     var ignoreDefValue = 0;
@@ -2067,8 +2076,9 @@ function magicAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, mul
     var mag = $("#" + atkUnitPrefix + "mag").val();
     var spr = $("#" + defUnitPrefix + "spr").val();
     var killerValue = 1;
-    if (enemyRaces.length > 0) {
-        killerValue = (1 + ((parseInt($("#" + atkUnitPrefix + "killer").val()) / 100) / enemyRaces.length));
+    var currentEnemyRace = getSelectedValuesFor("races");
+    if (currentEnemyRace.length > 0) {
+        killerValue = (1 + ((parseInt($("#" + atkUnitPrefix + "killer").val()) / 100) / currentEnemyRace.length));
     }
 
     var ignoreSprValue = 0;
