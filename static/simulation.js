@@ -19,6 +19,17 @@ var goals = {
     }
 };
 
+var elementsMap = {
+    1: 'fire',
+    2: 'ice',
+    3: 'lightning',
+    4: 'water',
+    5: 'wind',
+    6: 'earth',
+    7: 'light',
+    8: 'dark'
+}
+
 var useWeaponsElements = true;
 var applicableKillerType = "physical";
 var attackTwiceWithDualWield = true;
@@ -43,8 +54,8 @@ var selectedUnit;
 
 var equipable;
 
-var ennemyResist = {"fire":0,"ice":0,"water":0,"wind":0,"lightning":0,"earth":0,"light":-50,"dark":0};
-var ennemyRaces;
+var enemyResist = {"fire":0,"ice":0,"water":0,"wind":0,"lightning":0,"earth":0,"light":-50,"dark":0};
+var enemyRaces;
 
 var desirableElements = [];
 
@@ -76,8 +87,8 @@ function build() {
     
     builds[currentUnitIndex].bestValue = null;
     
-    readEnnemyResists();
-    ennemyRaces = getSelectedValuesFor("races");
+    readenemyResists();
+    enemyRaces = getSelectedValuesFor("races");
     builds[currentUnitIndex].innateElements = getSelectedValuesFor("elements");
     readGoal();
     
@@ -251,23 +262,23 @@ function selectEspers() {
 
 function getKillerCoef(item) {
     var cumulatedKiller = 0;
-    if (ennemyRaces.length > 0 && item.killers) {
+    if (enemyRaces.length > 0 && item.killers) {
         for (var killerIndex in item.killers) {
-            if (ennemyRaces.includes(item.killers[killerIndex].name) && item.killers[killerIndex][applicableKillerType]) {
+            if (enemyRaces.includes(item.killers[killerIndex].name) && item.killers[killerIndex][applicableKillerType]) {
                 cumulatedKiller += item.killers[killerIndex][applicableKillerType];
             }
         }
     }
-    return cumulatedKiller / ennemyRaces.length;
+    return cumulatedKiller / enemyRaces.length;
 }
 
-function readEnnemyResists() {
-    for(var element in ennemyResist) {
+function readenemyResists() {
+    for(var element in enemyResist) {
         var value = $("#elementalResists td." + element + " input").val();
         if (value) {
-            ennemyResist[element] = parseInt(value);
+            enemyResist[element] = parseInt(value);
         } else {
-            ennemyResist[element] = 0;
+            enemyResist[element] = 0;
         }
     }
 }
@@ -699,7 +710,7 @@ function getDamageCoefLevel(item) {
         }
         if (weaponList.includes(item.type) && useWeaponsElements) {
             // only for weapons
-            if ((item.element && ennemyResist[item.element] != 0)) {
+            if ((item.element && enemyResist[item.element] != 0)) {
                 var weaponElementDamageCoef = getWeaponElementDamageCoef(item.element);
                 if (weaponElementDamageCoef != 0) {
                     damageCoefLevel += "element" + weaponElementDamageCoef;
@@ -726,7 +737,7 @@ function getDamageCoefLevel(item) {
 function getWeaponElementDamageCoef(weaponElements) {
     var value = 0;
     for (var elementIndex in weaponElements) {
-        value += ennemyResist[weaponElements[elementIndex]];
+        value += enemyResist[weaponElements[elementIndex]];
     }
     return value / weaponElements.length;
 }
@@ -899,9 +910,9 @@ function calculateBuildValue(equiped, esper) {
         }
         for (var equipedIndex in itemAndPassives) {
             if (itemAndPassives[equipedIndex] && (areConditionOK(itemAndPassives[equipedIndex], equiped))) {
-                if (ennemyRaces.length > 0 && itemAndPassives[equipedIndex].killers) {
+                if (enemyRaces.length > 0 && itemAndPassives[equipedIndex].killers) {
                     for (var killerIndex = 0; killerIndex <  itemAndPassives[equipedIndex].killers.length; killerIndex++) {
-                        if (ennemyRaces.includes(itemAndPassives[equipedIndex].killers[killerIndex].name) && itemAndPassives[equipedIndex].killers[killerIndex][applicableKillerType]) {
+                        if (enemyRaces.includes(itemAndPassives[equipedIndex].killers[killerIndex].name) && itemAndPassives[equipedIndex].killers[killerIndex][applicableKillerType]) {
                             cumulatedKiller += itemAndPassives[equipedIndex].killers[killerIndex][applicableKillerType];
                         }
                     }
@@ -930,9 +941,9 @@ function calculateBuildValue(equiped, esper) {
         var resistModifier = 0;
         
         if (elements.length > 0) {
-            for (var element in ennemyResist) {
+            for (var element in enemyResist) {
                 if (elements.includes(element)) {
-                    resistModifier += ennemyResist[element] / 100;
+                    resistModifier += enemyResist[element] / 100;
                 }
             }    
             resistModifier = resistModifier / elements.length;
@@ -940,8 +951,8 @@ function calculateBuildValue(equiped, esper) {
         
         // Killers
         var killerMultiplicator = 1;
-        if (ennemyRaces.length > 0) {
-            killerMultiplicator += (cumulatedKiller / 100) / ennemyRaces.length;
+        if (enemyRaces.length > 0) {
+            killerMultiplicator += (cumulatedKiller / 100) / enemyRaces.length;
         }
         
         if ("atk" == builds[currentUnitIndex].statToMaximize) {
@@ -1056,6 +1067,28 @@ function calculatePercentStateValueForIndex(equiped, itemAndPassives, equipedInd
     return 0;
 }
 
+function calculateBuildKillerValue() {
+    var equiped = builds[currentUnitIndex].bestBuild;
+    var cumulatedKiller = 0;
+    var itemAndPassives = equiped.concat(builds[currentUnitIndex].selectedUnit.skills);
+    if (builds[currentUnitIndex].bestEsper != null) {
+        itemAndPassives.push(builds[currentUnitIndex].bestEsper);
+    }
+    for (var equipedIndex in itemAndPassives) {
+        if (itemAndPassives[equipedIndex] && (areConditionOK(itemAndPassives[equipedIndex], equiped))) {
+            if (enemyRaces.length > 0 && itemAndPassives[equipedIndex].killers) {
+                for (var killerIndex = 0; killerIndex <  itemAndPassives[equipedIndex].killers.length; killerIndex++) {
+                    if (enemyRaces.includes(itemAndPassives[equipedIndex].killers[killerIndex].name) && itemAndPassives[equipedIndex].killers[killerIndex][applicableKillerType]) {
+                        cumulatedKiller += itemAndPassives[equipedIndex].killers[killerIndex][applicableKillerType];
+                    }
+                }
+            }
+        }
+    }
+
+    return cumulatedKiller;
+}
+
 function areConditionOK(item, equiped) {
     if (item.equipedConditions) {
         var found = 0;
@@ -1146,6 +1179,8 @@ function logBuild(build, value, esper) {
         } else {
             $("#resultStats .damage").addClass("hidden");
         }
+        var killerValue = calculateBuildKillerValue();
+        $("#unit" + (currentUnitIndex + 1) + "Current_killer").val(killerValue);
         /*if (builds[currentUnitIndex].statToMaximize == "atk" || builds[currentUnitIndex].statToMaximize == "mag") {
             $("#resultStats").html("<div>" + builds[currentUnitIndex].statToMaximize + " = " + Math.floor(value.stat) + '</div><div>damage (on 100 def) = ' + Math.floor(value.total) + "</div><div>+" + builds[currentUnitIndex].statToMaximize + "% : " + bonusPercent + "</div>");
         } else if (builds[currentUnitIndex].statToMaximize == "def" || builds[currentUnitIndex].statToMaximize == "spr" || builds[currentUnitIndex].statToMaximize == "hp") {
@@ -1644,9 +1679,9 @@ function getStateHash() {
         data.attackType = $(".magicalSkillType select").val();
     }
     if (data.goal == "atk" || data.goal == "mag") {
-        data.ennemyRaces = getSelectedValuesFor("races");
-        readEnnemyResists();
-        data.ennemyResists = ennemyResist;
+        data.enemyRaces = getSelectedValuesFor("races");
+        readenemyResists();
+        data.enemyResists = enemyResist;
     }
     
     if (builds[currentUnitIndex].selectedUnit) {
@@ -1699,12 +1734,12 @@ function loadStateHashAndBuild(data) {
         $('.magicalSkillType select option[value="' + data.attackType + '"]').prop("selected", true);
     }
     if (data.goal == "atk" || data.goal == "mag") {
-        select("races", data.ennemyRaces);
-        for (var element in data.ennemyResists) {
-            if (data.ennemyResists[element] == 0) {
+        select("races", data.enemyRaces);
+        for (var element in data.enemyResists) {
+            if (data.enemyResists[element] == 0) {
                 $("#elementalResists ." + element + " input").val("");
             } else {
-                $("#elementalResists ." + element + " input").val(data.ennemyResists[element]);
+                $("#elementalResists ." + element + " input").val(data.enemyResists[element]);
             }
         }
     }
@@ -1871,10 +1906,10 @@ function unitAttack(unitIndex) {
     var atkSkillName = $("#unit" + unitIndex + "AtkSkillSelect option:selected").val();
 
     if (atkSkillName == "") {
-        damage = physicalAttack("unit" + unitIndex + "Current_", "monsterCurrent_", 100, 0);
+        damage = physicalAttack(unitIndex, null, "unit" + unitIndex + "Current_", "monsterCurrent_", 100, 0);
     } else {
         var selectedSkill = null;
-        builds[currentUnitIndex].selectedUnit.atkSkills.forEach(function (atkSkill) {
+        builds[unitIndex - 1].selectedUnit.atkSkills.forEach(function (atkSkill) {
             if (atkSkill.name == atkSkillName) {
                 selectedSkill = atkSkill;
             }
@@ -1883,13 +1918,16 @@ function unitAttack(unitIndex) {
         var damage = 0;
         switch (selectedSkill.atkType.toLowerCase()) {
             case "physical":
-                damage = physicalAttack("unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, selectedSkill.ignoreDef);
+                damage = physicalAttack(unitIndex, selectedSkill, "unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, selectedSkill.ignoreDef);
             break;
             case "magic":
-                damage = magicAttack("unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, selectedSkill.ignoreSpr);
+                damage = magicAttack(unitIndex, selectedSkill, "unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, selectedSkill.ignoreSpr);
             break;
             case "hybrid":
-                damage = hybridAttack("unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, selectedSkill.ignoreDef, selectedSkill.ignoreSpr);
+                damage = hybridAttack(unitIndex, selectedSkill, "unit" + unitIndex + "Current_", "monsterCurrent_", selectedSkill.multiplier, selectedSkill.ignoreDef, selectedSkill.ignoreSpr);
+            break;
+            case "fixed":
+                // todo
             break;
             default:
                 return;
@@ -1903,7 +1941,7 @@ function unitAttack(unitIndex) {
 }
 
 function monsterAttack(unitIndex) {
-    var damage = physicalAttack("monsterCurrent_", "unit" + unitIndex + "Current_", 2.1, 50);
+    var damage = physicalAttack(unitIndex, null, "monsterCurrent_", "unit" + unitIndex + "Current_", 2.1, 50);
 
     $("#monsterAtk .damageResult").html(damage);
     $("#monsterAtk .damage").removeClass("hidden");
@@ -1911,31 +1949,74 @@ function monsterAttack(unitIndex) {
     $("#monsterCurrent_mp").val($("#monsterCurrent_mp").val() - 45);
 }
 
-function singleHandAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, isLeftHand) {
-    var atk = $("#" + atkUnitPrefix + "atk").val();
-    var def = $("#" + defUnitPrefix + "def").val();
-
-    var ignoreDefValue = 0;
-    if (ignoreDef) {
-        ignoreDefValue = ignoreDef;
+function findAttackElements(unitIndex, selectedSkill) {
+    var attackElements = [];
+    if (builds[unitIndex - 1].bestBuild[0] && builds[unitIndex - 1].bestBuild[0].element) {
+        builds[unitIndex - 1].bestBuild[0].element.forEach(function(element) {
+            attackElements.push(element)
+        });
+    }
+    
+    if (builds[unitIndex - 1].bestBuild[1] && builds[unitIndex - 1].bestBuild[1].element) {
+        builds[unitIndex - 1].bestBuild[1].element.forEach(function(element) {
+            attackElements.push(element)
+        });
     }
 
-    var levelCorrection = (1 + (99 / 100));
-    var damage = 0;
-    var weaponIndex = 0;
-    if (!isLeftHand) {
-        weaponIndex = 1;
-    }
-
-    var actualAtk = atk - builds[currentUnitIndex].bestBuild[weaponIndex]["atk"];
-    damage = actualAtk * actualAtk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100 * levelCorrection; /* * killer * elemetal_weakness / elemental_resistence */
-
-    return Math.floor(damage);
+    return attackElements;
 }
 
-function physicalAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef) {
+function calculateElementMultiplier(unitIndex, selectedSkill) {
+    var elementList = [];
+    var resistList = [];
+
+    if (selectedSkill) {
+        if (selectedSkill.elemental) {
+            var skillElements = selectedSkill.elemental.split(",");
+            skillElements.forEach(function(element) {
+                elementList.push(element.toLowerCase());
+            });
+        }
+    
+        if (selectedSkill.atkType.toLowerCase() == "physical") {
+            var attackElements = findAttackElements(unitIndex, selectedSkill);
+            attackElements.forEach(function(element) {
+                if (!(element in elementList)) {
+                    elementList.push(element.toLowerCase());
+                }
+            });
+        }
+    }
+
+    elementList.forEach(function(element) {
+        var resist = parseInt($("#elementalResists td." + element + " input").val());
+//                    if (selectedSkill["lowerResist" + attackElements[element]]) {
+//                        resist += selectedSkill["lowerResist" + attackElements[element]];
+//                    }
+        resistList.push([element, resist]);
+    });
+
+    var resistSum = 0;
+    if (resistList.length > 0) {
+        for (var element in resistList) {
+            resistSum += resistList[element][1];
+        }
+        var multiplier = (1 - ((resistSum / resistList.length) / 100));
+        if (multiplier < 0) {
+            multiplier = 0;
+        }
+        return multiplier;
+    }
+    return 1;
+}
+
+function singleHandAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, isLeftHand) {
     var atk = $("#" + atkUnitPrefix + "atk").val();
     var def = $("#" + defUnitPrefix + "def").val();
+    var killerValue = 1;
+    if (enemyRaces.length > 0) {
+        killerValue = ((1 + (parseInt($("#" + defUnitPrefix + "killer").val()) / 100)) / enemyRaces.length);
+    }
 
     var ignoreDefValue = 0;
     if (ignoreDef) {
@@ -1944,21 +2025,51 @@ function physicalAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef) {
 
     var levelCorrection = (1 + (99 / 100));
     var damage = 0;
-    if (builds[currentUnitIndex].bestBuild[0] && builds[currentUnitIndex].bestBuild[1]) {
-        var leftDamage = singleHandAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, true);
-        var rightDamage = singleHandAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, false);
-
-        damage = leftDamage + rightDamage;
+    var actualAtk = atk;
+    if (isLeftHand) {
+        if (builds[unitIndex - 1].bestBuild[1]["atk"]) {
+            actualAtk -= builds[unitIndex - 1].bestBuild[1]["atk"]; // minus right hand
+        }
     } else {
-        damage = atk * atk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100 * levelCorrection; /* * killer * elemetal_weakness / elemental_resistence */
+        if (builds[unitIndex - 1].bestBuild[0]["atk"]) {
+            actualAtk -= builds[unitIndex - 1].bestBuild[0]["atk"]; // minus left hand
+        }
+    }
+
+    var elementMultiplier = calculateElementMultiplier(unitIndex, selectedSkill);
+    damage = actualAtk * actualAtk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100 * levelCorrection * elementMultiplier * killerValue;
+
+    return Math.floor(damage);
+}
+
+function physicalAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef) {
+    var atk = $("#" + atkUnitPrefix + "atk").val();
+    var def = $("#" + defUnitPrefix + "def").val();
+
+    var ignoreDefValue = 0;
+    if (ignoreDef) {
+        ignoreDefValue = ignoreDef;
+    }
+
+    var levelCorrection = (1 + (99 / 100));
+    var damage = 0;
+    if (builds[unitIndex - 1].bestBuild[0]) {
+        damage += singleHandAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, true);
+    }
+    if (builds[unitIndex - 1].bestBuild[1]) {
+        damage += singleHandAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, false);
     }
 
     return Math.floor(damage);
 }
 
-function magicAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr) {
+function magicAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr) {
     var mag = $("#" + atkUnitPrefix + "mag").val();
     var spr = $("#" + defUnitPrefix + "spr").val();
+    var killerValue = 1;
+    if (enemyRaces.length > 0) {
+        killerValue = ((1 + (parseInt($("#" + defUnitPrefix + "killer").val()) / 100)) / enemyRaces.length);
+    }
 
     var ignoreSprValue = 0;
     if (ignoreSpr) {
@@ -1967,21 +2078,22 @@ function magicAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr) {
 
     var levelCorrection = (1 + (99 / 100));
     var damage = 0;
-    damage = mag * mag / (spr * (100 - ignoreSprValue) / 100) * multiplier / 100 * levelCorrection; /* * killer * elemetal_weakness / elemental_resistence */
+    var elementMultiplier = calculateElementMultiplier(unitIndex, selectedSkill);
+    damage = mag * mag / (spr * (100 - ignoreSprValue) / 100) * multiplier / 100 * levelCorrection * elementMultiplier * killerValue;
 
     return Math.floor(damage);
 }
 
-function singleHandHybridAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef, isLeftHand) {
-   var physicalDamage = singleHandAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, isLeftHand);
-   var magicDamage = magicAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef);
+function singleHandHybridAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef, isLeftHand) {
+   var physicalDamage = singleHandAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, multiplier, ignoreDef, isLeftHand);
+   var magicDamage = magicAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef);
 
     return Math.floor((physicalDamage + magicDamage) / 2);
 }
 
-function hybridAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef) {
-   var physicalDamage = physicalAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef);
-   var magicDamage = magicAttack(atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef);
+function hybridAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef) {
+   var physicalDamage = physicalAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef);
+   var magicDamage = magicAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, multiplier, ignoreSpr, ignoreDef);
 
     return Math.floor((physicalDamage + magicDamage) / 2);
 }

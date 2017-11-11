@@ -465,6 +465,9 @@ function getActiveSkills(unitId, skillsIn, skills, enhancements) {
                         addToStat(attackSkill, "chargeIncremental", atkRawEffect[atkRawEffect.length - 2]);
                         addToStat(attackSkill, "chargeMax", atkRawEffect[atkRawEffect.length - 1]);
                         doesDamage = true;
+                    } else if (effectFlag == 29) {
+                        // fixed damage
+                        // todo
                     }
                 }
             }
