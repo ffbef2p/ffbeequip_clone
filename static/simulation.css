@@ -235,3 +235,20 @@
 .builderSetupLink {
     cursor: pointer;
 }
+
+
+#battleCurrentUnits .damage {
+    vertical-align: center;
+    padding-left: 10px;
+}
+
+#battleCurrentUnits .damageResult {
+    font-weight: bold;
+    vertical-align: center;
+}
+
+
+#battleCurrentUnits .attackElement {
+    font-weight: italic;
+}
+

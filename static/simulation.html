@@ -6,7 +6,7 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="common.css?version=3">
-        <link rel="stylesheet" type="text/css" href="builder.css">
+        <link rel="stylesheet" type="text/css" href="simulation.css">
         <link rel="icon" type="image/png" href="/img/heavyArmor.png">
         <title>FFBE Equip - Builder</title>
     </head>
@@ -213,7 +213,7 @@
                         <span>Battle</span>
                     </div>
                     <div class="panel-body">
-                        <div class="battleCurrentUnits">
+                        <div id="battleCurrentUnits">
                             <div class="col-xs-12">
                                 <span>Monster</span>
                             </div>                        
@@ -253,7 +253,7 @@
                                     <input id="monsterCurrent_spr" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
                                 </div>
                             </div>
-                            <div id=monsterAtk class="col-xs-6">
+                            <div id=monsterAtk class="col-xs-12">
                                 <div class="form-group flex-form-group">
                                     <span>Monster Atk skill</span>
                                     <select id="monsterAtkSkillSelect" name="atkSkill" class="form-control"></select>
@@ -302,13 +302,19 @@
                                     <input id="unit1Current_spr" type = "text" class = "form-control" value = "180" onkeypress="return isNumber(event)">
                                 </div>
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-6">
                                 <div class = "input-group">
-                                    <span class = "input-group-addon">Killer</span>
-                                    <input id="unit1Current_killer" type = "text" class = "form-control" value = "0" readonly>
+                                    <span class = "input-group-addon">Phy Killer</span>
+                                    <input id="unit1Current_killerPhy" type = "text" class = "form-control" value = "0">
                                 </div>
                             </div>
-                            <div id=unit1Atk class="col-xs-6">
+                            <div class="col-xs-6">
+                                <div class = "input-group">
+                                    <span class = "input-group-addon">Mag Killer</span>
+                                    <input id="unit1Current_killerMag" type = "text" class = "form-control" value = "0">
+                                </div>
+                            </div>
+                            <div id=unit1Atk class="col-xs-12">
                                 <div class="form-group flex-form-group">
                                     <span>Atk skill</span>
                                     <select id="unit1AtkSkillSelect" name="atkSkill" class="form-control"></select>
@@ -360,10 +366,10 @@
                             <div class="col-xs-12">
                                 <div class = "input-group">
                                     <span class = "input-group-addon">Killer</span>
-                                    <input id="unit2Current_killer" type = "text" class = "form-control" value = "0" readonly>
+                                    <input id="unit2Current_killer" type = "text" class = "form-control" value = "0">
                                 </div>
                             </div>
-                            <div id=unit2Atk class="col-xs-6">
+                            <div id=unit2Atk class="col-xs-12">
                                 <div class="form-group flex-form-group">
                                     <span>Atk skill</span>
                                     <select id="unit2AtkSkillSelect" name="atkSkill" class="form-control"></select>
@@ -375,6 +381,24 @@
                             </div>
 
                         </div>
+                    </div>
+                </div>
+                <div class="panel panel-default equipments">
+                    <div class="panel-heading">
+                        <form class="form-inline">
+                            <div class="form-group flex-form-group">
+                                <span>Equipments</span>
+                                <select class="form-control">
+                                    <option value="all">All equipments</option>
+                                    <option value="owned" disabled>Only owned equipments</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-body">
+                        <div><input id="exludeEvent" type="checkbox"><label>Exclude event items</label></div>
+                        <div><input id="excludeTMR5" type="checkbox"><label>Exclude TMR of base 5* units</label></div>
+                        <div><input id="excludeNotReleasedYet" type="checkbox" checked="true"><label>Exclude not released yet equipments</label></div>
                     </div>
                 </div>
             </div>
