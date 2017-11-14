@@ -37,6 +37,12 @@
                             <div class="loader hidden"></div>
                             <span class="message hidden"/>
                         </div>
+                        <div class="cookieLoader"><span>Local Data:&nbsp;</span>
+                            <select id="cookieLoaderSelect" onchange="loadSelectedData()">
+                                <option value=""/>
+                            </select>
+                            <button class="btn btn-default" onclick="clearCookies()">Delete All</button>
+                        </div>                        
                 </nav>
             </div>
             <div class="col-xs-6">
@@ -54,6 +60,17 @@
                                 </select>
                             </div>
                         </form>
+                    </div>
+                </div>
+                <div class="panel panel-default saveBuild">
+                    <div class="panel-heading">
+                        <div class="form-group flex-form-group">
+                            <span>Save Build</span>
+                            <input id="buildName" type = "text" class="form-control" placeholder = ""></select>
+                            <div class="btn-group">
+                                <button class="saveBuild btn" onclick="saveToCookies()">Save</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="panel panel-default unit">

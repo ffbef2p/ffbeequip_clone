@@ -266,6 +266,14 @@ body {
     float: left;
 }
 
+.cookieLoader {
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    float: right;
+    margin-right: 50px;
+}
+
 #inventoryDiv .btn {
     margin-left: 10px;
 }

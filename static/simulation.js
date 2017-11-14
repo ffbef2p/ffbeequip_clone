@@ -53,6 +53,8 @@ var weaponVariants = {
 
 var fixedVariants = [ 85, 100 ];
 
+var cookieStartToken = "_build_";
+
 var useWeaponsElements = true;
 var applicableKillerType = "physical";
 var attackTwiceWithDualWield = true;
@@ -1792,7 +1794,7 @@ function loadStateHashAndBuild(data) {
     window.location.hash = "";
 }
 
-function showBuildLink() {
+function calculateDataHash() {
     var data = getStateHash();
     data.fixedItems = [];
     // first fix dual wield items
@@ -1810,6 +1812,11 @@ function showBuildLink() {
         }
     }
     data.equipmentToUse = "all";
+    return data;
+}
+
+function showBuildLink() {
+    var data = calculateDataHash();
     $('<div id="showLinkDialog" title="Build Link">' + 
         '<input value="http://ffbeEquip.lyrgard.fr/builder.html#' + btoa(JSON.stringify(data)) + '"></input>' +
         '<h4>This link will open the builder with this exact build displayed</h4>' +
@@ -1837,7 +1844,7 @@ function showBuildLink() {
 function showBuilderSetupLink() {
     var data = getStateHash();
     $('<div id="showBuilderSetupLinkDialog" title="Builder setup Link">' + 
-        '<input value="http://ffbeEquip.lyrgard.fr/builder.html#' + btoa(JSON.stringify(data)) + '"></input>' +
+        '<input value="http://localhost:8800/simulation.html#' + btoa(JSON.stringify(data)) + '"></input>' +
         '<h4>The following information are stored in this link :</h4>' +
         '<ul><li>The goal of the current unit</li><li>The currently selected unit, if any, and related information</li><li>Information about the monster (race and elemental resist)</li><li>The choice of equipments to use</li><li>The items that has been pinned in the build</li></ul>' +
         '<h4>Upon opening the link, those information will be restored, and if possible a build will be launched.</h4>' +
@@ -1905,7 +1912,9 @@ $(function() {
     $("#searchText").on("input", $.debounce(300,updateSearchResult));
     $('#fixItemModal').on('shown.bs.modal', function () {
         $('#searchText').focus();
-    })  
+    })
+
+    loadCookies();
 });
 
 var counter = 0;
@@ -1916,6 +1925,58 @@ function readHash() {
         if (data) {
             loadStateHashAndBuild(data);
         }
+    }
+}
+
+function loadSelectedData() {
+    var data = $("#cookieLoaderSelect option:selected");
+    if (data) {
+        loadStateHashAndBuild(data);
+    }
+}
+
+function loadCookies() {
+    if (document.cookie) {
+        var loadedData = [];
+        var savedData = document.cookie.split(";");
+        savedData.forEach(function(data) {
+            var pairData = data.split("=");
+            loadedData.push([pairData[0],pairData[1]]);
+        });
+        if (loadedData.length > 0) {
+            var options = '<option value=""></option>';
+            loadedData.sort().forEach(function(pair) {
+                key = pair[0].trim();
+                if  (key.startsWith(cookieStartToken)) {
+                    options += '<option value="'+ pair[1].trim() + '">' + key.substr(cookieStartToken.length) + '</option>';
+                }
+            })
+//            Object.keys(loadedData).sort().forEach(function(pair) {
+            $("#cookieLoaderSelect").html(options);
+        }
+        return loadedData;
+    }
+    return [];
+}
+
+function clearCookies() {
+    document.cookie = "";
+}
+
+function saveToCookies() {
+    var buildName = $("#buildName").val();
+    if (buildName) {
+        var data = calculateDataHash();
+        if (data) {
+            var hash = btoa(JSON.stringify(data));
+            if (document.cookie) {
+                document.cookie += ";";
+            }
+            alert(cookieStartToken + buildName)
+            var expiry = new Date(new Date().getTime() + parseInt(365) * 1000 * 60 * 60 * 24);
+            document.cookie = cookieStartToken + buildName + "=" + hash + "; expires=" + expiry.toGMTString();
+        }
+        loadCookies();
     }
 }
 
