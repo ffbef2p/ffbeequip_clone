@@ -66,7 +66,7 @@ app.get('/googleOAuthSuccess', function(req, res) {
                 state = {};
             }
             
-            var baseUrl = 'http://ffbeEquip.lyrgard.fr/';
+            var baseUrl = 'http://localhost:8800/';
             if (state.dev) {
                 baseUrl = 'http://localhost:3000/';
             }

@@ -1728,7 +1728,7 @@ function showBuildLink() {
     }
     data.equipmentToUse = "all";
     $('<div id="showLinkDialog" title="Build Link">' + 
-        '<input value="http://ffbeEquip.lyrgard.fr/builder.html#' + btoa(JSON.stringify(data)) + '"></input>' +
+        '<input value="http://localhost:8800/builder.html#' + btoa(JSON.stringify(data)) + '"></input>' +
         '<h4>This link will open the builder with this exact build displayed</h4>' +
       '</div>' ).dialog({
         modal: true,
@@ -1754,7 +1754,7 @@ function showBuildLink() {
 function showBuilderSetupLink() {
     var data = getStateHash();
     $('<div id="showBuilderSetupLinkDialog" title="Builder setup Link">' + 
-        '<input value="http://ffbeEquip.lyrgard.fr/builder.html#' + btoa(JSON.stringify(data)) + '"></input>' +
+        '<input value="http://localhost:8800/builder.html#' + btoa(JSON.stringify(data)) + '"></input>' +
         '<h4>The following information are stored in this link :</h4>' +
         '<ul><li>The goal of the current unit</li><li>The currently selected unit, if any, and related information</li><li>Information about the monster (race and elemental resist)</li><li>The choice of equipments to use</li><li>The items that has been pinned in the build</li></ul>' +
         '<h4>Upon opening the link, those information will be restored, and if possible a build will be launched.</h4>' +

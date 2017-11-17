@@ -1816,7 +1816,7 @@ function calculateDataHash() {
 function showBuildLink() {
     var data = calculateDataHash();
     $('<div id="showLinkDialog" title="Build Link">' + 
-        '<input value="http://ffbeEquip.lyrgard.fr/builder.html#' + btoa(JSON.stringify(data)) + '"></input>' +
+        '<input value="http://localhost:8800/builder.html#' + btoa(JSON.stringify(data)) + '"></input>' +
         '<h4>This link will open the builder with this exact build displayed</h4>' +
       '</div>' ).dialog({
         modal: true,
