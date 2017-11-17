@@ -108,8 +108,6 @@ function build() {
         return;
     }
     
-    
-    
     builds[currentUnitIndex].bestValue = null;
     
     readenemyResists();
@@ -1929,7 +1927,9 @@ function readHash() {
 }
 
 function loadSelectedData() {
-    var data = $("#cookieLoaderSelect option:selected");
+    var rawHash = $("#cookieLoaderSelect option:selected").val();
+    var data = JSON.parse(atob(rawHash));
+    
     if (data) {
         loadStateHashAndBuild(data);
     }
@@ -1951,7 +1951,6 @@ function loadCookies() {
                     options += '<option value="'+ pair[1].trim() + '">' + key.substr(cookieStartToken.length) + '</option>';
                 }
             })
-//            Object.keys(loadedData).sort().forEach(function(pair) {
             $("#cookieLoaderSelect").html(options);
         }
         return loadedData;
@@ -1972,7 +1971,6 @@ function saveToCookies() {
             if (document.cookie) {
                 document.cookie += ";";
             }
-            alert(cookieStartToken + buildName)
             var expiry = new Date(new Date().getTime() + parseInt(365) * 1000 * 60 * 60 * 24);
             document.cookie = cookieStartToken + buildName + "=" + hash + "; expires=" + expiry.toGMTString();
         }
