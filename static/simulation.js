@@ -2252,7 +2252,7 @@ function magicAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, mul
         ignoreSprValue = ignoreSpr;
     }
 
-    var levelCorrection = (1 + (99 / 100));
+    var levelCorrection = 2;
     var damage = 0;
     var elementMultiplierResult = calculateElementMultiplier(unitIndex, selectedSkill);
 
@@ -2269,6 +2269,7 @@ function magicAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, mul
     }
 
     damage = mag * mag / (spr * (100 - ignoreSprValue) / 100) * multiplier / 100 * levelCorrection * elementMultiplierResult[0] * killerValue;
+//    alert (mag + ", " + spr + ", " + multiplier + ", " + levelCorrection + ", " +  elementMultiplierResult[0] + ", " + killerValue)
 
     damageMin = (damage * fixedVariants[0] / 100);
     damageMax = (damage * fixedVariants[1] / 100);
