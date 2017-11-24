@@ -273,7 +273,7 @@
                             <div id=monsterAtk class="col-xs-12">
                                 <div class="form-group flex-form-group">
                                     <span>Monster Atk skill</span>
-                                    <select id="monsterAtkSkillSelect" name="atkSkill" class="form-control"></select>
+                                    <select id="monsterAtkSkillSelect" name="atkSkill" class="form-control" onchange="onSkillSelect(-1)"></select>
                                 </div>
                                 <div class="atkButtons btn-group">
                                     <button class="monsterAtkBtn btn" onclick="monsterAttack(1)">Mon ATK</button>
@@ -334,7 +334,10 @@
                             <div id=unit1Atk class="col-xs-12">
                                 <div class="form-group flex-form-group">
                                     <span>Atk skill</span>
-                                    <select id="unit1AtkSkillSelect" name="atkSkill" class="form-control"></select>
+                                    <select id="unit1AtkSkillSelect" name="atkSkill" class="form-control" onchange="onSkillSelect(1)"></select>
+                                    <span>&nbsp;Stack:</span>
+                                    <input id="unit1Current_stackCharge" type = "text" class = "form-control" value = "0" disabled>
+                                    <span>/</span><span id="unit1Current_stackMaxCharge"/>
                                 </div>
                                 <div class="atkButtons btn-group">
                                     <button class="atkBtn btn" onclick="unitAttack(1)">ATK</button>
@@ -389,7 +392,10 @@
                             <div id=unit2Atk class="col-xs-12">
                                 <div class="form-group flex-form-group">
                                     <span>Atk skill</span>
-                                    <select id="unit2AtkSkillSelect" name="atkSkill" class="form-control"></select>
+                                    <select id="unit2AtkSkillSelect" name="atkSkill" class="form-control" onchange="onSkillSelect(2)"></select>
+                                    <span>&nbsp;Stack:</span>
+                                    <input id="unit2Current_stackCharge" type = "text" class = "form-control" value = "0" disabled>
+                                    <span>/</span><span id="unit2Current_stackMaxCharge"/>
                                 </div>
                                 <div class="atkButtons btn-group">
                                     <button class="atkBtn btn" onclick="unitAttack(2)">ATK</button>
