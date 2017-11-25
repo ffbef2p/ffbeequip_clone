@@ -1480,24 +1480,20 @@ function onRacesChange() {
 }
 
 function onSkillSelect(unitIndex) {
+    var selectedSkill = getSelectedSkill(unitIndex, builds[unitIndex - 1].selectedUnit);
     var atkSkillName = $("#unit" + unitIndex + "AtkSkillSelect option:selected").val();
-    var foundSkill = false;
-    if (atkSkillName != "") {
-        var selectedSkill = null;
-        builds[unitIndex - 1].selectedUnit.atkSkills.forEach(function (atkSkill) {
-            if (!foundSkill && (atkSkill.name == atkSkillName)) {
-                if (atkSkill.chargeMax && atkSkill.chargeIncremental) {
-                    $("#unit" + unitIndex + "Current_stackCharge").prop("disabled", false);
-                    document.getElementById("unit" + unitIndex + "Current_stackMaxCharge").innerHTML = atkSkill.chargeMax;
-                    foundSkill = true;
-                }
-            }
-        });
+    var isStackSkill = false;
+    if (selectedSkill) {
+        if (selectedSkill.chargeMax && selectedSkill.chargeIncremental) {
+            $("#unit" + unitIndex + "Current_stackCharge").prop("disabled", false);
+            document.getElementById("unit" + unitIndex + "Current_stackMaxCharge").innerHTML = selectedSkill.chargeMax;
+            isStackSkill = true;
+        }
     }
-    if (!foundSkill) {
+
+    if (!isStackSkill) {
         $("#unit" + unitIndex + "Current_stackCharge").val(0);
         $("#unit" + unitIndex + "Current_stackCharge").prop("disabled", true);
-        //$("#unit" + unitIndex + "Current_stackMaxCharge").textContent = "";
         document.getElementById("unit" + unitIndex + "Current_stackMaxCharge").innerHTML = "";
     }
 }
@@ -2034,23 +2030,29 @@ function formatHtmlElementList(elementList) {
     return htmlText;
 }
 
-function unitAttack(unitIndex) {
+function getSelectedSkill(unitIndex, unit) {
     var atkSkillName = $("#unit" + unitIndex + "AtkSkillSelect option:selected").val();
-    var damageRange = null;
-    var elementList = null;
-
-    if (atkSkillName == "") {
-        var attackResult = physicalAttack(unitIndex, null, "unit" + unitIndex + "Current_", "monsterCurrent_", 100, 0);
-        damageRange = attackResult[0];
-        elementList = attackResult[1];
-    } else {
-        var selectedSkill = null;
-        builds[unitIndex - 1].selectedUnit.atkSkills.forEach(function (atkSkill) {
+    var selectedSkill = null;
+    if (atkSkillName != "") {
+        unit.atkSkills.forEach(function (atkSkill) {
             if (atkSkill.name == atkSkillName) {
                 selectedSkill = atkSkill;
             }
         });
+    }
+    return selectedSkill;
+}
 
+function unitAttack(unitIndex) {
+    var damageRange = null;
+    var elementList = null;
+    var selectedSkill = getSelectedSkill(unitIndex, builds[unitIndex - 1].selectedUnit);
+
+    if (selectedSkill == null) {
+        var attackResult = physicalAttack(unitIndex, null, "unit" + unitIndex + "Current_", "monsterCurrent_", 100, 0);
+        damageRange = attackResult[0];
+        elementList = attackResult[1];
+    } else {
         var damage = 0;
         switch (selectedSkill.atkType.toLowerCase()) {
             case "physical": {
@@ -2321,4 +2323,9 @@ function hybridAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, mu
     }
 
     return [ damageRange, unionArrays(physicalDamageRange[1], magicDamageRange[1]) ];
+}
+
+function unitChain(unitIndex, chainTargetUnitIndex) {
+    var chain1SkillName = getSelectedSkill(unitIndex, builds[unitIndex - 1].selectedUnit);
+    var chain2SkillName = getSelectedSkill(chainTargetUnitIndex, builds[chainTargetUnitIndex - 1].selectedUnit);
 }
