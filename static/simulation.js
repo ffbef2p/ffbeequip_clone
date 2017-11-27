@@ -100,7 +100,7 @@ var searchStat = "";
 
 var dataLoadedFromHash = false;
 
-function build() {
+function buildUnit() {
     $(".buildLinks").addClass("hidden");
     
     if (!builds[currentUnitIndex].selectedUnit) {
@@ -1432,7 +1432,7 @@ function inventoryLoaded() {
     var data = readStateHashData();
     
     if (data && data.equipmentToUse == "owned") {
-        loadStateHashAndBuild(data);    
+        loadStateHashAndBuild(data);
     }
 }
 
@@ -1807,7 +1807,8 @@ function loadStateHashAndBuild(data) {
         }
     }
     dataLoadedFromHash = true;
-    build();
+
+    buildUnit();
     window.location.hash = "";
 }
 
@@ -1913,7 +1914,7 @@ $(function() {
     
     $(".equipments select").change(onEquipmentsChange);
     
-    $("#buildButton").click(build);
+    $("#buildButton").click(buildUnit);
     
     builds[currentUnitIndex] = {};
     
@@ -2198,7 +2199,7 @@ function singleHandAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix
         }
     }
 
-    var weaponType = builds[unitIndex - 1].bestBuild[(isLeftHand ? 0 : 1)].type;
+    var weaponType = builds[unitIndex - 1].bestBuild[(isLeftHand ? 0 : 1)].type.toLowerCase();
 
     var elementMultiplierResult = calculateElementMultiplier(unitIndex, selectedSkill);
     damage = actualAtk * actualAtk / (def * (100 - ignoreDefValue) / 100) * multiplier / 100 * levelCorrection * elementMultiplierResult[0] * killerValue;
@@ -2325,7 +2326,14 @@ function hybridAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, mu
     return [ damageRange, unionArrays(physicalDamageRange[1], magicDamageRange[1]) ];
 }
 
+function skillChain(unit1, unit2, skill1, skill2, offset) {
+
+}
+
 function unitChain(unitIndex, chainTargetUnitIndex) {
-    var chain1SkillName = getSelectedSkill(unitIndex, builds[unitIndex - 1].selectedUnit);
-    var chain2SkillName = getSelectedSkill(chainTargetUnitIndex, builds[chainTargetUnitIndex - 1].selectedUnit);
+    var chain1Skill = getSelectedSkill(unitIndex, builds[unitIndex - 1].selectedUnit);
+    var chain2Skill = getSelectedSkill(chainTargetUnitIndex, builds[chainTargetUnitIndex - 1].selectedUnit);
+    var offset = $("#unit" + unitIndex + "Current_chainOffset").val();
+
+    skillChain(builds[unitIndex - 1].selectedUnit, builds[chainTargetUnitIndex - 1].selectedUnit, chain1Skill, chain2Skill, offset);
 }

@@ -483,6 +483,7 @@ function getActiveSkills(unitId, skillsIn, skills, enhancements) {
         addToStat(attackSkill, "elemental", skillIn.element_inflict);
         addToStat(attackSkill, "atkCount", skillIn.attack_count);
         addToStat(attackSkill, "atkFrames", skillIn.attack_frames);
+        addToStat(attackSkill, "atkDamages", skillIn.attack_damage);
         addToStat(attackSkill, "effectFrames", skillIn.effect_frames);
         skillsOut.push(attackSkill);
     }
@@ -639,6 +640,9 @@ function formatOutput(units) {
             }
             if (skill.atkFrames) {
                 result += "\"atkFrames\":\"" + skill.atkFrames + "\", ";
+            }
+            if (skill.atkDamages) {
+                result += "\"atkDamages\":\"" + skill.atkDamages + "\", ";
             }
             if (skill.effectFrames) {
                 result += "\"effectFrames\":\"" + skill.effectFrames + "\"";

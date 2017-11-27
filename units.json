@@ -2750,6 +2750,16 @@
 		},
 		"equip":["staff","bow","mace","hat","clothes","robe"]
 	},
+	"Maiden Sakura": {
+		"id":"401000905",
+		"max_rarity":"5",
+		"sex":"female",
+		"stats": {
+			"maxStats":{"hp":2402,"mp":154,"atk":88,"def":84,"mag":118,"spr":104},
+			"pots":{"hp":240,"mp":40,"atk":16,"def":16,"mag":24,"spr":16}
+		},
+		"equip":["dagger","staff","rod","axe","spear","mace","hat","clothes","robe"]
+	},
 	"Zargabaath": {
 		"id":"401001106",
 		"max_rarity":"6",
@@ -2879,5 +2889,25 @@
 			"pots":{"hp":390,"mp":65,"atk":26,"def":26,"mag":34,"spr":26}
 		},
 		"equip":["staff","rod","hammer","harp","hat","clothes","robe"]
+	},
+	"Charming Kitty Ariana": {
+		"id":"401002406",
+		"max_rarity":"6",
+		"sex":"female",
+		"stats": {
+			"maxStats":{"hp":3397,"mp":202,"atk":111,"def":118,"mag":133,"spr":155},
+			"pots":{"hp":390,"mp":65,"atk":26,"def":26,"mag":26,"spr":34}
+		},
+		"equip":["staff","rod","harp","hat","clothes","robe"]
+	},
+	"Sportive Ariana": {
+		"id":"401002506",
+		"max_rarity":"6",
+		"sex":"female",
+		"stats": {
+			"maxStats":{"hp":3410,"mp":159,"atk":115,"def":126,"mag":107,"spr":145},
+			"pots":{"hp":510,"mp":65,"atk":26,"def":26,"mag":26,"spr":26}
+		},
+		"equip":["hammer","harp","lightShield","hat","clothes","robe"]
 	}
 }
