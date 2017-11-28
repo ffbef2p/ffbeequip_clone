@@ -2326,14 +2326,18 @@ function hybridAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, mu
     return [ damageRange, unionArrays(physicalDamageRange[1], magicDamageRange[1]) ];
 }
 
-function skillChain(unit1, unit2, skill1, skill2, offset) {
+function skillChain(units, skills, offsets) {
 
 }
 
 function unitChain(unitIndex, chainTargetUnitIndex) {
     var chain1Skill = getSelectedSkill(unitIndex, builds[unitIndex - 1].selectedUnit);
     var chain2Skill = getSelectedSkill(chainTargetUnitIndex, builds[chainTargetUnitIndex - 1].selectedUnit);
-    var offset = $("#unit" + unitIndex + "Current_chainOffset").val();
+    var offset1 = $("#unit" + unitIndex + "Current_chainOffset").val();
+    var offset2 = $("#unit" + chainTargetUnitIndex + "Current_chainOffset").val();
 
-    skillChain(builds[unitIndex - 1].selectedUnit, builds[chainTargetUnitIndex - 1].selectedUnit, chain1Skill, chain2Skill, offset);
+    var units = [ builds[unitIndex - 1].selectedUnit, builds[chainTargetUnitIndex - 1].selectedUnit ];
+    var skills = [ chain1Skill, chain2Skill ];
+    var offsets = [ offset1, offset2 ];
+    skillChain(units, skills, offsets);
 }
