@@ -485,6 +485,7 @@ function getActiveSkills(unitId, skillsIn, skills, enhancements) {
         addToStat(attackSkill, "atkFrames", skillIn.attack_frames);
         addToStat(attackSkill, "atkDamages", skillIn.attack_damage);
         addToStat(attackSkill, "effectFrames", skillIn.effect_frames);
+        addToStat(attackSkill, "offset", 16);
         skillsOut.push(attackSkill);
     }
 
@@ -646,6 +647,9 @@ function formatOutput(units) {
             }
             if (skill.effectFrames) {
                 result += "\"effectFrames\":\"" + skill.effectFrames + "\"";
+            }
+            if (skill.offset) {
+                result += "\"offset\":\"" + skill.offset + "\"";
             }
             result+= "}"
         }

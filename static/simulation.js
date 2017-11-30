@@ -2327,7 +2327,20 @@ function hybridAttack(unitIndex, selectedSkill, atkUnitPrefix, defUnitPrefix, mu
 }
 
 function skillChain(units, skills, offsets) {
-
+    var unitExtendedSkillFrameSetss = [];
+    var unitIndex = 0;
+    var currentElementSet = [];
+    skills.forEach(function(skill) {
+        var unitExtendedSkillFrames = [];
+        unitExtendedSkillFrames = unitExtendedSkillFrames.concat(skill.atkFrames);
+        var lastFrame = skill.atkFrames[skill.atkFrames.length - 1];
+        var isDualWield = units[unitIndex].bestBuild[0] && units[unitIndex].bestBuild[1];
+        if (isDualWield) {
+            unitExtendedSkillFrames = unitExtendedSkillFrames.concat(skill.offset + skill.atkFrames[0]);
+            unitExtendedSkillFrames = unitExtendedSkillFrames.concat();
+        }
+        ++unitIndex;
+    });
 }
 
 function unitChain(unitIndex, chainTargetUnitIndex) {
